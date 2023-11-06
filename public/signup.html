@@ -19,33 +19,32 @@
 <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="signup.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
 <main class="form-signin">
   <form>
     <h1 class="h3 mb-3 fw-normal pt-5"><strong>Heartrate Helper</strong></h1>
-    <h1 class="h4 mb-3 fw-normal">Please Sign In</h1>
+    <h1 class="h4 mb-3 fw-normal">Create Account</h1>
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+    <div class="form-group">
+      <label for="newEmail">Email address</label>
+      <input type="email" class="form-control" id="newEmail" placeholder="name@example.com">
+      
     </div>
 
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+    <div class="form-group">
+      <label for="newPassword">Password</label>
+      <input type="password" class="form-control" id="newPassword" placeholder="Password">
     </div>
 
-    <p class = "mb-0"><a class="link-opacity-100" href="signup.html">Create an account</a></p>
-
-    <div class="checkbox mb-2">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
+    <div class="form-group mb-4">
+      <label for="confirmNewPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmNewPassword" placeholder="Password">
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
   </form>
 </main>
 
