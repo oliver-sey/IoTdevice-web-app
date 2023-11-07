@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* for images in a bootstrap column, so they stay within the column */
+
+img {
+  max-width: 100%;
+}
+
+/* is this right? */
+.navbar {
+	min-height: 2000px;
+	padding-top: 70px;
+}
+  

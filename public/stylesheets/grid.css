@@ -24,3 +24,8 @@ h4 {
 	margin-bottom: 40px;
   }
   
+  /* added by me */
+  .transparent-grid {
+	background-color: transparent;
+	border: none;
+  }
