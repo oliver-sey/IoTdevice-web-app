@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require("../models/users");
 
-/* Post user account */
+/* Get user account */
 router.get('/user', (req, res) => {
   User.findOne({email: req.body.email}).then(result => {
     res.status(200).send({"success" : "user get"})
