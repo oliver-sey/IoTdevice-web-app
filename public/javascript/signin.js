@@ -8,7 +8,7 @@ $(document).ready(()=>{
     console.log("hostname", window.location.hostname)
 })
 
-$("#test").click(() => {
+$("#signin").click(() => {
     console.log("hostname", window.location.pathname)
 })
 
