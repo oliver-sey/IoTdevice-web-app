@@ -62,6 +62,7 @@ document
 				"</li></ul>";
 			formErrors.style.display = "block";
 		} else {
-			this.submit();
+            // TODO: is this right? was "this.submit" before but that didn't work
+			event.target.submit();
 		}
 	});
