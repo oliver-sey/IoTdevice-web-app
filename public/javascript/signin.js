@@ -20,26 +20,30 @@ function addClickHandlers() {
     console.log("in the addClickHandlers function")
     
     // when you click 'Sign in' button on the login screen, call logIn()
-    $("#signin").click(logIn)
+    $("#signin").click((event) => {
+        event.preventDefault()
+        logIn()
+    })
 }
 
 
 function setRequestBody() {
     requestBody.email = $("#floatingInput").val()
     requestBody.password = $("#floatingPassword").val()
+    console.log("requestBody", requestBody)
 }
 
 function logIn() {
     console.log("In the logIn() function")
-    //setRequestBody()
-    console.log("hostname", window.location.pathname)
-    // $.ajax({
-    //     url: "/user", 
-    //     method: "GET",
-    //     data: requestBody,
-    //     dataType: "json"
-    //  })
-    //  .done(function(data) {
-    //     console.log("Login Success", data);
-    //  });
+    setRequestBody()
+    $.ajax({
+        url: "/user", 
+        method: "GET",
+        data: requestBody,
+        contentType: "application/json",
+        dataType: "json"
+     })
+     .done(function(data) {
+        console.log("Login Success", data);
+     });
 }
