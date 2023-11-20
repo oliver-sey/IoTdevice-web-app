@@ -4,8 +4,9 @@ var User = require("../models/users");
 
 /* Get user account */
 router.get('/user', (req, res) => {
+  // console.log("req", req, JSON.parse(req))
   User.findOne({email: req.body.email}).then(result => {
-    res.status(200).send({"success" : "user get"})
+    res.status(200).send({"success" : result})
       console.log("get", result)
   }).catch(err => {
     res.status(400).send({"error" : "get user failed"});
@@ -14,17 +15,22 @@ router.get('/user', (req, res) => {
 })
 /* Post user account */
 router.post('/create', (req, res) => {
+  try {
     const newUser = new User({
       email: req.body.email,
       password: req.body.password
     })
     newUser.save().then(result => {
-      res.status(201).send({"success" : "user created"})
+      res.status(201).send({"success" : result})
       console.log("created", result)
     }).catch(err => {
       res.status(400).send({"error" : "email or password required"});
       console.log("register error", err)
     })
+  }
+  catch (err) {
+    console.log("signin failed", err)
+  }
 });
 /* Patch user account */
 router.patch('/update', (req, res) => {

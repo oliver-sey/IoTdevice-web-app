@@ -1,4 +1,3 @@
-
 let requestBody = {
     email: "",
     password: ""
@@ -13,40 +12,38 @@ $(document).ready(()=>{
     addClickHandlers()
 })
 
-
 // **** put all your adding click handlers in here!!!
 // this gets called when the document is ready
 function addClickHandlers() {
     console.log("in the addClickHandlers function")
     
-    // when you click 'Sign in' button on the login screen, call logIn()
-    $("#signin").click((event) => {
+    // when you click 'Sign up' button on the login screen, call logIn()
+    $("#submit").click((event) => {
         event.preventDefault()
-        logIn()
+        signUp()
     })
 }
 
-
 function setRequestBody() {
-    requestBody.email = $("#floatingInput").val()
-    requestBody.password = $("#floatingPassword").val()
+    requestBody.email = $("#email").val()
+    requestBody.password = $("#password").val()
     console.log("requestBody", requestBody)
 }
 
-function logIn() {
-    console.log("In the logIn() function")
+function signUp() {
+    console.log("In the signUp() function")
     setRequestBody()
     $.ajax({
-        url: "/users/user", 
-        method: "GET",
+        url: "/users/create", 
+        method: "POST",
         data: JSON.stringify(requestBody),
         contentType: "application/json",
         dataType: "json"
      })
-     .done(function(data) {
-        console.log("Login Success", data);
-     })
      .always(function(data) {
         console.log("result", data)
+     })
+     .done(function(data) {
+        console.log("signUp success", data);
      });
 }
