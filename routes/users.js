@@ -32,6 +32,7 @@ router.post('/create', (req, res) => {
     console.log("signin failed", err)
   }
 });
+
 /* Patch user account */
 router.patch('/update', (req, res) => {
   User.updateOne({email: req.body.email}, {$set: {password: req.body.password}}).then(result => {
