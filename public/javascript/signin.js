@@ -39,14 +39,18 @@ function logIn() {
     $.ajax({
         url: "/users/user", 
         method: "GET",
-        data: JSON.stringify(requestBody),
+        data: requestBody,
         contentType: "application/json",
         dataType: "json"
      })
      .done(function(data) {
-        console.log("Login Success", data);
+        console.log("response data", data)
+        localStorage.setItem("email", data.email)
+        localStorage.setItem("password", data.password)
+        window.location.assign("LoggedInPage.html")
+        alert("Login Success")
      })
-     .always(function(data) {
-        console.log("result", data)
-     });
+     .fail(function(err) {
+        alert("Login Fail")
+     })
 }

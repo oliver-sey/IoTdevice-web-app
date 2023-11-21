@@ -5,8 +5,10 @@ var User = require("../models/users");
 /* Get user account */
 router.get('/user', (req, res) => {
   // console.log("req", req, JSON.parse(req))
-  User.findOne({email: req.body.email}).then(result => {
-    res.status(200).send({"success" : result})
+  console.log("req", req.query.email, req.query.password)
+  let Email = req.query.email
+  User.findOne({email: Email}).then(result => {
+    res.status(200).send(result)
       console.log("get", result)
   }).catch(err => {
     res.status(400).send({"error" : "get user failed"});
@@ -44,7 +46,7 @@ router.patch('/update', (req, res) => {
 })
 
 /* Delete user account */
-router.delete('delete', (req, res) => {
+router.delete('/delete', (req, res) => {
   User.deleteOne({email: req.body.email}).then(result => {
     res.status(200).send({"success" : "user deleted"})
       console.log("deleted", result)
