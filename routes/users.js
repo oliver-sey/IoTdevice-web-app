@@ -8,8 +8,13 @@ router.get('/user', (req, res) => {
   console.log("req", req.query.email, req.query.password)
   let Email = req.query.email
   User.findOne({email: Email}).then(result => {
-    res.status(200).send(result)
-      console.log("get", result)
+    if (result !== null && result.length !== 0) {
+      res.status(200).send(result)
+        console.log("get", result)
+    }
+    else{
+      res.status(404).send({"error" : "get user failed"})
+    }
   }).catch(err => {
     res.status(400).send({"error" : "get user failed"});
     console.log("get error", err)
