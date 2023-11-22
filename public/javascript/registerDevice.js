@@ -33,13 +33,21 @@ function registerDevice() {
     .done(function(data) {
         console.log("get device data", data)
         $.ajax({
-            url: '/device',
+            url: '/device/register',
             method: "POST",
+            data: JSON.stringify(device),
             contentType: "application/json",
             dataType: "json"
         })
-        //window.location.assign("LoggedInPage.html")
-        alert("Login Success")
+        .done(function(res) {
+            console.log("backend res", res)
+            window.location.assign("LoggedInPage.html")
+            alert("register device success, redirect to your home page")
+        })
+        .fail(function(err) {
+            console.log("backend err", err)
+            alert("Register Fail")
+        })
      })
      .fail(function(err) {
         alert("Register Device Fail! (your device is not register on Particle Website or your webhook is not setup yet)")
