@@ -16,8 +16,7 @@ $(document).ready(()=>{
 
 function addClickHandlers() {
     console.log("in the addClickHandlers function")
-    
-    // when you click 'Sign in' button on the login screen, call logIn()
+    //register button click listener
     $('#register').click(registerDevice)
 }
 
