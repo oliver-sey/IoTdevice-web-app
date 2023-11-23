@@ -2,7 +2,7 @@
 
 document
 	.getElementById("form-signup")
-	.addEventListener("submit", function (event) {
+	.addEventListener("change", function (event) {
 		event.preventDefault(); // Prevent form submission
 
 		let formErrors = document.getElementById("formErrors");
@@ -61,8 +61,9 @@ document
 				errors.join("</li><li>") +
 				"</li></ul>";
 			formErrors.style.display = "block";
-		} else {
-            // TODO: is this right? was "this.submit" before but that didn't work
-			event.target.submit();
-		}
+		} 
+		// else {
+        //     // TODO: is this right? was "this.submit" before but that didn't work
+		// 	event.target.submit();
+		// }
 	});
