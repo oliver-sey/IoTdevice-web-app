@@ -14,8 +14,9 @@ $(document).ready(()=>{
     .done(function(res) {
         console.log("my devices", res, res.length)
         //ex https://api.thingspeak.com/channels/2349152/charts/1?api_key=MPQACWXEJVYHLC7K
-        for (let i in res) {
-            $('#deviceStart').append(`<p id="${i}">Device ${i + 1}  ${res[i].deviceName}</p>`)
+        
+        for (let i = 0; i < res.length; i++) {
+            $('#deviceStart').append(`<p id="${i}">Device ${i + 1}${"    "} ${res[i].deviceName}${"    "}<a href="https://api.thingspeak.com/channels/${res[i].channelID}/charts/1?api_key=${res[i].readAPI_Key}">View chart</a></p>`)
         }
     })
      .fail(function(err) {
