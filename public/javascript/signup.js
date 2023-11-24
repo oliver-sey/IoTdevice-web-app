@@ -42,6 +42,8 @@ function signUp() {
      })
      .always(function(data) {
         console.log("result", data)
+        window.location.assign("signin.html")
+        alert("Sign up Success! Now please Sign in")
      })
      .done(function(data) {
         console.log("signUp success", data);
