@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      table,
+      td,
+      th {
+        border: solid 1px black;
+      }
+      .table {
+        margin: 20px 0px;
+      }
+      p {
+        color: red;
+        width: 420px;
+        height: 80px;
+        margin: 20px 0px;
+        padding: 5px;
+        border: solid 1px black;
+      }
+    </style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
@@ -11,9 +29,21 @@
     <h1>Hello, Welcome to ECE413 Project</h1>
     <h3>Hi <span id="useremail"></span></h3>
     <h3 id="deviceStart">Your Devices:</h3>
-    <a href="./registerDevice.html" style="display: block"
-      >Register a Device!!</a
-    >
+    <table class="table" style="width: 100%">
+      <tr id="row0">
+        <th align="left">Device Number:</th>
+        <th align="left">Device Name:</th>
+        <th align="left">Weekly Summary View</th>
+        <th align="left">Detailed Daily View</th>
+      </tr>
+    </table>
+    <button type="button" id="newDevice">Register a NEW DEVICE!!</button>
+    <p>
+      Note: If your device doesn't have any data on Particle/Webhook or data
+      from the past week/selected time, it will display an empty chart, so
+      please make sure your device has data already in the cloud before you view
+      the charts! Thank you so much!!!
+    </p>
     <a id="logOut" href="./signin.html">Click me to Log out</a>
   </body>
 </html>

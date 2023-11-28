@@ -1,6 +1,9 @@
 
 $(document).ready(()=>{
     console.log("hostname", window.location.hostname)
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
     $.ajax({
         url: `/device/mydevices?deviceName=${urlParams.get('deviceName')}`,
         method: "GET",
@@ -9,6 +12,7 @@ $(document).ready(()=>{
     })
     .done(function (res) {
         console.log("device res", res)
+        
     })
 })
 
