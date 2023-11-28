@@ -47,7 +47,7 @@ function logIn() {
         console.log("response data", data)
         localStorage.setItem("email", data.email)
         localStorage.setItem("password", data.password)
-        window.location.assign("LoggedInPage.html")
+        window.location.assign("loggedInPage.html")
         alert("Login Success")
      })
      .fail(function(err) {

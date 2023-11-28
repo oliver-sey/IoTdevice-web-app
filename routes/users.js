@@ -7,7 +7,7 @@ router.get('/user', (req, res) => {
   // console.log("req", req, JSON.parse(req))
   console.log("req", req.query.email, req.query.password)
   let Email = req.query.email
-  User.findOne({email: Email}).then(result => {
+  User.findOne({email: Email, password: req.query.password}).then(result => {
     if (result !== null && result.length !== 0) {
       res.status(200).send(result)
         console.log("get", result)
