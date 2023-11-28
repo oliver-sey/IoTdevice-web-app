@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var User = require("../models/users");
+const jwt = require("jwt-simple");
+const secret = "1z98AJf901JZAa"
+
+
 
 /* Get user account */
 router.get('/user', (req, res) => {
@@ -9,7 +13,11 @@ router.get('/user', (req, res) => {
   let Email = req.query.email
   User.findOne({email: Email, password: req.query.password}).then(result => {
     if (result !== null && result.length !== 0) {
-      res.status(200).send(result)
+
+      // add JWT token calculation
+      console.log(result)
+      const jwtString = jwt.encode({email:Email}, secret);
+      res.status(200).send({email:Email, password:req.query.password, jwt:jwtString})
         console.log("get", result)
     }
     else{
@@ -22,6 +30,7 @@ router.get('/user', (req, res) => {
 })
 /* Post user account */
 router.post('/create', (req, res) => {
+  console.log("posting user")
   try {
     const newUser = new User({
       email: req.body.email,

@@ -1,4 +1,3 @@
-
 let requestBody = {
     email: "",
     password: ""
@@ -37,7 +36,8 @@ function logIn() {
     console.log("In the logIn() function")
     setRequestBody()
     $.ajax({
-        url: "/users/user", 
+        // hard coded for testing. CHANGE HERE LATER!!! DELETE: http://localhost:3000
+        url: "http://localhost:3000/users/user", 
         method: "GET",
         data: requestBody,
         contentType: "application/json",
@@ -47,6 +47,7 @@ function logIn() {
         console.log("response data", data)
         localStorage.setItem("email", data.email)
         localStorage.setItem("password", data.password)
+        localStorage.setItem("jwt", data.jwt)
         window.location.assign("loggedInPage.html")
         alert("Login Success")
      })

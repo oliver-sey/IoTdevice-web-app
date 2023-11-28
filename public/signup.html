@@ -24,55 +24,40 @@
     <!-- link for js and jquery for ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javascript/signup.js"></script>
-    <!-- script for validating entered paswords -->
-    <script src="js/signupValidator.js" defer></script>
   </head>
   <body class="text-center">
-    <main class="form-signup" id="form-signup">
-      <form>
-        <h1 class="h3 mb-3 fw-normal pt-5">
-          <strong>Heartrate Helper</strong>
-        </h1>
-        <h1 class="h4 mb-3 fw-normal">Create Account</h1>
-
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input
-            type="text"
-            class="form-control"
-            id="email"
-            placeholder="name@example.com"
-          />
+    <div class="container-fluid h-100">
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+          <main class="form-signup" id="form-signup">
+            <form>
+              <h1 class="h3 mb-3 fw-normal pt-5"><strong>Heartrate Helper</strong></h1>
+              <h1 class="h4 mb-3 fw-normal">Create Account</h1>
+  
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="text" class="form-control" id="email" placeholder="name@example.com" />
+              </div>
+  
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" />
+              </div>
+  
+              <div class="form-group mb-4">
+                <label for="passwordConfirm">Confirm Password</label>
+                <input type="password" class="form-control" id="passwordConfirm" placeholder="Password" />
+              </div>
+  
+              <div id="formErrors"></div> <!-- Form errors will be displayed here -->
+  
+              <button class="w-100 btn btn-lg btn-primary" type="button" id="submit">Sign up</button>
+              <p>Already has an account? <a href="./signin.html">Sign in</a></p>
+            </form>
+          </main>
         </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            placeholder="Password"
-          />
-        </div>
-
-        <div class="form-group mb-4">
-          <label for="passwordConfirm">Confirm Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="passwordConfirm"
-            placeholder="Password"
-          />
-        </div>
-
-        <!-- populate form errors here when they are detected -->
-        <div id="formErrors"></div>
-
-        <button class="w-100 btn btn-lg btn-primary" type="button" id="submit">
-          Sign up
-        </button>
-        <p>Already has an account? <a href="./signin.html">Sign in</a></p>
-      </form>
-    </main>
+      </div>
+    </div>
   </body>
+  
 </html>
