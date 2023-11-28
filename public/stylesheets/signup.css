@@ -53,6 +53,6 @@ html, body {
 .row-full-height {
   flex: 1;
   display: flex;
-  align-items: center; /* Vertical center */
-  justify-content: center; /* Horizontal center */
+  align-items: center;
+  justify-content: center;
 }
