@@ -48,7 +48,7 @@ function logIn() {
         localStorage.setItem("email", data.email)
         localStorage.setItem("password", data.password)
         localStorage.setItem("jwt", data.jwt)
-        window.location.assign("loggedInPage.html")
+        window.location.assign("weeklysummary.html")
         alert("Login Success")
      })
      .fail(function(err) {
