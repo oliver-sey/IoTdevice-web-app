@@ -24,7 +24,7 @@ function loadNavbar() {
                         <a class="nav-link" href="./detaileddaily.html">Detailed Daily</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./aboutus.html">About Us</a>
+                        <a class="nav-link" href="./index.html">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./accountsettings.html">Account Settings</a>
