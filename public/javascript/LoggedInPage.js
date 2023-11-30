@@ -9,7 +9,8 @@ $(document).ready(()=>{
         url: `/device/mydevices?email=${localStorage.getItem('email')}`,
         method: "GET",
         contentType: "application/json",
-        dataType: "json"
+        dataType: "json",
+        headers: {"x-access-token" : localStorage.getItem('jwt')}
     })
     .done(function(res) {
         console.log("my devices", res, res.length)
@@ -17,10 +18,7 @@ $(document).ready(()=>{
         for (let i = 0; i < res.length; i++) {
             $('tr').after(`<tr id="${i + 1}"> <td>${i + 1}</td> <td>${res[i].deviceName}</td> <td><a href="https://api.thingspeak.com/channels/${res[i].channelID}/charts/1?api_key=${res[i].readAPI_Key}&title=WeeklyView&days=7">View Chart</a></td>  <td>  
             <label for="date${i+1}">Choose a date:</label>
-<input
-  type="datetime-local"
-  id="date${i+1}"
-  name="meeting-time"/><button id="button${i+1}" type="button">View Chart</button></td></tr>`)
+<input type="datetime-local" id="date${i+1}" name="meeting-time"/><button id="button${i+1}" type="button">View Chart</button></td></tr>`)
             $(`#date${i+1}`).change(() => {
                 console.log($(`#date${i+1}`).val())
             })
@@ -66,7 +64,7 @@ function addClickHandlers() {
 function setRequestBody() {
     requestBody.email = localStorage.getItem('email')
     requestBody.password = localStorage.getItem('password')
-    console.log("requestBody", requestBody)
+    console.log("LoggedIn requestBody", requestBody)
 }
 
 function logOut() {//after logout, clear local storage

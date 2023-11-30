@@ -3,6 +3,7 @@ const jwt = require('jwt-simple');
 const secret = "1z98AJf901JZAa"
 
 function verifyJWT(req, res, next) {
+  console.log("verifyJWT req", req.headers)
   const token = req.headers['x-access-token'] || req.headers['authorization'];
 
   if (!token) {
@@ -10,7 +11,7 @@ function verifyJWT(req, res, next) {
   }
 
   try {
-    console.log(token)
+    console.log("token", token)
     const decoded = jwt.decode(token, secret);
     req.user = decoded;
     next();

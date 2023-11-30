@@ -8,11 +8,15 @@ $(document).ready(()=>{
         url: `/device/mydevices?deviceName=${urlParams.get('deviceName')}`,
         method: "GET",
         contentType: "application/json",
-        dataType: "json"
+        dataType: "json",
+        headers: {"x-access-token" : localStorage.getItem('jwt')}
     })
     .done(function (res) {
         console.log("device res", res)
         
+    })
+    .fail(function(err) {
+        console.log("get device err", err)
     })
 })
 

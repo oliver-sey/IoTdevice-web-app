@@ -43,11 +43,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // versions with JWT verification. Target routes you want that on, so probably just /device for now. You need a header in every passed call
 // that correlates to 'authorization'. This has to have the jwt token value we get from the login function. This is commented out for testing 
-// app.use("/device", jwtMiddleware, deviceRouter);
+app.use("/device", jwtMiddleware, deviceRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/device', deviceRouter);
+//app.use('/device', deviceRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -65,9 +65,9 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, function() {
-  console.log("Server running on port 3000");
-});
+// app.listen(3000, function() {
+//   console.log("Server running on port 3000");
+// });
 
 module.exports = app;
 
