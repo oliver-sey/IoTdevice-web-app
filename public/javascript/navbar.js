@@ -18,19 +18,19 @@ function loadNavbar() {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="weekly-summary.html">Weekly Summary</a>
+                        <a class="nav-link" href="./weeklysummary.html">Weekly Summary</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="detailed-daily.html">Detailed Daily</a>
+                        <a class="nav-link" href="./detaileddaily.html">Detailed Daily</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about-us.html">About Us</a>
+                        <a class="nav-link" href="./aboutus.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="account-settings.html">Account Settings</a>
+                        <a class="nav-link" href="./accountsettings.html">Account Settings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="references.html">References</a>
+                        <a class="nav-link" href="./references.html">References</a>
                     </li>
                 </ul>
             </div>
