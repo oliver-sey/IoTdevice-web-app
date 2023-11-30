@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="Edit Profile" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Edit Profile" />
+		<meta name="author" content="Oliver Seymour and team" />
+
+		<!-- favicon -->
+		<link rel="icon" href="../images/heart-stethoscope.svg" />
+
+		<!-- Bootstrap core CSS -->
+		<!-- TODO: is there a better way to give file locations than this? -->
+		<link
+			href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<!-- currently there's only email and password -->
+
+		<!-- for the whole page contents?-->
+		<div>
+			<!-- for the container that holds the update account stuff -->
+			<div>
+				<h2>You can edit your profile details here:</h2>
+				<!-- for updating password -->
+				<div>
+					<!-- enter the password the first time -->
+					<div>
+					<label for="newPassword">New Password:</label>
+					<input type="text" id="newPassword" placeholder="New password">
+					</div>	
+
+					<!-- confirm the password -->
+					<div>
+						<label for="confirmNewPassword">Confirm Password:</label>
+						<input type="text" id="confirmNewPassword" placeholder="Confirm password">
+					</div>
+
+					<!-- confirmation button -->
+					<div>
+						<input type="button" value="Submit" id="submitEditedProfile">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
