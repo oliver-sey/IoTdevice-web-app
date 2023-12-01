@@ -32,8 +32,21 @@ function loadNavbar() {
                     <li class="nav-item">
                         <a class="nav-link" href="./references.html">References</a>
                     </li>
+                    <li class = "nav-item">
+                        <a class="nav-link logout-link" href="./signin.html">Logout</a>
+                    </li>
                 </ul>
             </div>
         </nav>
     `;
+        // add logout function listener
+        document.querySelector('.logout-link').addEventListener('click', function(event) {
+            logOut();
+        });
+}
+
+function logOut() {
+    localStorage.clear();
+    alert("You have successfully logged out!");
+    window.location.href = './login.html';
 }
