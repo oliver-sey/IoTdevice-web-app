@@ -1,28 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Detailed Daily</title>
+  <head>
+    <style>
+      table,
+      td,
+      th {
+        border: solid 1px black;
+      }
+      .table {
+        margin: 20px 0px;
+      }
+      p {
+        color: red;
+        width: 420px;
+        height: 80px;
+        margin: 20px 0px;
+        padding: 5px;
+        border: solid 1px black;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+
+    <script src="javascript/detaileddaily.js"></script>
+
+    <!-- nav bar import -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<!-- add this placeholder in -->
-<div id="navbar-placeholder"></div>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <h1>Hello, Welcome to ECE413 Project</h1>
+    <h3>Hi <span id="useremail"></span></h3>
+    <h3 id="deviceStart">Your Devices:</h3>
+    <table class="table" style="width: 100%">
+      <tr id="row0">
+        <th align="left">Device Number:</th>
+        <th align="left">Device Name:</th>
+        <th align="left">Weekly Summary View</th>
+        <th align="left">Detailed Daily View</th>
+      </tr>
+    </table>
+    <button type="button" id="newDevice">Register a NEW DEVICE!!</button>
+    <p>
+      Note: If your device doesn't have any data on Particle/Webhook or data
+      from the past week/selected time, it will display an empty chart, so
+      please make sure your device has data already in the cloud before you view
+      the charts! Thank you so much!!!
+    </p>
 
-<!-- page stuff goes here -->
+    <!-- load in the navbar on page run -->
+    <script src="javascript/navbar.js"></script>
+    <script>
+        window.onload = function() {
+            loadNavbar();
+        };
+    </script>
 
-<!-- make sure to import these for navbar to work -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<!-- load in the navbar on page run -->
-<script src="javascript/navbar.js"></script>
-<script>
-    window.onload = function() {
-        loadNavbar();
-    };
-</script>
-</body>
+
+  </body>
 </html>
+
