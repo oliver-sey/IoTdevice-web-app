@@ -95,7 +95,7 @@ function signUp() {
     setRequestBody()
     $.ajax({
 		// hard coded for testing. CHANGE HERE LATER!!! DELETE: http://localhost:3000
-        url: "http://localhost:3000/users/create", 
+        url: "/users/create", 
         method: "POST",
         data: JSON.stringify(requestBody),
         contentType: "application/json",

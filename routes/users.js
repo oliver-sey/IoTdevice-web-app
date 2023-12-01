@@ -3,21 +3,17 @@ var router = express.Router();
 var User = require("../models/users");
 const jwt = require("jwt-simple");
 const secret = "1z98AJf901JZAa"
+const bcrypt = require("bcryptjs");
 
 
-
-/* Get user account */
-router.get('/user', (req, res) => {
-  // console.log("req", req, JSON.parse(req))
-  console.log("req", req.query.email, req.query.password)
-  let Email = req.query.email
-  User.findOne({email: Email, password: req.query.password}).then(result => {
-    if (result !== null && result.length !== 0) {
-
-      // add JWT token calculation
-      console.log(result)
-      const jwtString = jwt.encode({email:Email}, secret);
-      res.status(200).send({email:Email, password:req.query.password, jwt:jwtString})
+/* Get user account(Login) */
+router.post('/user', (req, res) => {
+  User.findOne({email: req.body.email}).then(result => {
+    console.log("result", result)
+    if (result !== null && result.length !== 0 && bcrypt.compareSync(req.body.password, result.password)) {//check if password matches the hashed password inside the database
+        // add JWT token calculation
+        const jwtString = jwt.encode({email:req.body.email}, secret);
+        res.status(200).send({email:req.body.email, password:req.body.password, jwt:jwtString})
         console.log("get", result)
     }
     else{
@@ -28,24 +24,26 @@ router.get('/user', (req, res) => {
     console.log("get error", err)
   })
 })
-/* Post user account */
+/* Post user account (create account)*/
 router.post('/create', (req, res) => {
-  console.log("posting user")
+  console.log("create account")
+  const encryptedPassword = bcrypt.hashSync(req.body.password, 10)//hash the user password
+  console.log("hash password", encryptedPassword)
   try {
     const newUser = new User({
       email: req.body.email,
-      password: req.body.password
+      password: encryptedPassword
     })
     newUser.save().then(result => {
       res.status(201).send({"success" : result})
       console.log("created", result)
     }).catch(err => {
       res.status(400).send({"error" : "email or password required"});
-      console.log("register error", err)
+      console.log("create account fail", err)
     })
   }
   catch (err) {
-    console.log("signin failed", err)
+    console.log("create account failed", err)
   }
 });
 

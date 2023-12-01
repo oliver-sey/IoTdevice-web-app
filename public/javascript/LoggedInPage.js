@@ -42,7 +42,7 @@ function addClickHandlers() {
     setRequestBody()
     $.ajax({
         url: "/users/user", 
-        method: "GET",
+        method: "POST",
         data: requestBody,
         contentType: "application/json",
         dataType: "json"

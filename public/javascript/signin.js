@@ -1,3 +1,4 @@
+
 let requestBody = {
     email: "",
     password: ""
@@ -37,9 +38,9 @@ function logIn() {
     setRequestBody()
     $.ajax({
         // hard coded for testing. CHANGE HERE LATER!!! DELETE: http://localhost:3000
-        url: "http://localhost:3000/users/user", 
-        method: "GET",
-        data: requestBody,
+        url: "/users/user", 
+        method: "POST",
+        data: JSON.stringify(requestBody),
         contentType: "application/json",
         dataType: "json"
      })
