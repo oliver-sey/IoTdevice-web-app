@@ -1,0 +1,32 @@
+/* **this a global stylesheet for the whole project, you just have to make sure to include it in each html file */
+
+body {
+  padding: 50px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* for images in a bootstrap column, so they stay within the column */
+
+img {
+  max-width: 100%;
+}
+
+/* is this right? */
+/* nav {
+	min-height: 2000px;
+	padding-top: 70px;
+} */
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 50vw;
+}
