@@ -43,7 +43,7 @@ function addClickHandlers() {
     $.ajax({
         url: "/users/user", 
         method: "POST",
-        data: requestBody,
+        data: JSON.stringify(requestBody),
         contentType: "application/json",
         dataType: "json"
      })
@@ -69,5 +69,6 @@ function setRequestBody() {
 
 function logOut() {//after logout, clear local storage
     localStorage.clear()
+    window.location.assign("signin.html")
     alert("You have successfully log out!")
 }

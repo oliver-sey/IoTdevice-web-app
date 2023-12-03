@@ -13,7 +13,7 @@
       p {
         color: red;
         width: 420px;
-        height: 80px;
+        height: 130px;
         margin: 20px 0px;
         padding: 5px;
         border: solid 1px black;
@@ -24,8 +24,29 @@
     <title>Welcome</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javascript/loggedInPage.js"></script>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- add this placeholder in -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- page stuff goes here -->
+
+    <!-- make sure to import these for navbar to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- load in the navbar on page run -->
+    <script src="javascript/navbar.js"></script>
+    <script>
+      window.onload = function () {
+        loadNavbar();
+      };
+    </script>
     <h1>Hello, Welcome to ECE413 Project</h1>
     <h3>Hi <span id="useremail"></span></h3>
     <h3 id="deviceStart">Your Devices:</h3>
@@ -44,6 +65,6 @@
       please make sure your device has data already in the cloud before you view
       the charts! Thank you so much!!!
     </p>
-    <a id="logOut" href="./signin.html">Click me to Log out</a>
+    <button id="logOut" type="button">Log out</button>
   </body>
 </html>
