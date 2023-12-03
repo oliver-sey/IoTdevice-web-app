@@ -43,7 +43,7 @@ function addClickHandlers() {
     $.ajax({
         url: "/users/user", 
         method: "POST",
-        data: requestBody,
+        data: JSON.stringify(requestBody),
         contentType: "application/json",
         dataType: "json"
      })

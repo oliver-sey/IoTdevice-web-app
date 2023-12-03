@@ -18,6 +18,9 @@ function loadNavbar() {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="./LoggedInPage.html">Your Devices</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="./weeklysummary.html">Weekly Summary</a>
                     </li>
                     <li class="nav-item">
