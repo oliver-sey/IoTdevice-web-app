@@ -51,5 +51,5 @@ function loadNavbar() {
 function logOut() {
     localStorage.clear();
     alert("You have successfully logged out!");
-    window.location.href = './login.html';
+    window.location.href = './signin.html';
 }
