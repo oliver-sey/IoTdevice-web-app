@@ -16,34 +16,89 @@
 			href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 		/>
+
+		<!-- Our CSS for all pages -->
+		<!-- this is important because it has CSS for the form errors div -->
+		<link href="stylesheets/style.css" rel="stylesheet" />
+		<!-- **CSS just for this page -->
+		<link href="/stylesheets/updateAccount.css" rel="stylesheet" />
+
+		<!-- link for js and jquery for ajax -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- import the JS file -->
+		<script src="javascript/updateAccount.js"></script>
 	</head>
 
 	<body>
 		<!-- currently there's only email and password -->
-		
+
 		<!-- for the whole page contents?-->
-		<div>
+		<div class="update-container">
 			<!-- for the container that holds the update account stuff -->
 			<div>
 				<h2>You can edit your profile details here:</h2>
+				<!-- for updating first name -->
+				<div class="update-one-detail">
+					<!-- enter the first name, probably don't need to have them confirm it -->
+					<div class="label-and-input-box">
+						<label for="newFirstName">Updated First Name:</label>
+						<input
+							type="text"
+							id="newFirstName"
+							placeholder="TODO put user first name here"
+						/>
+					</div>
+				</div>
+
+				<!-- for updating last name -->
+				<div class="update-one-detail">
+					<!-- enter the last name, probably don't need to have them confirm it -->
+					<div class="label-and-input-box">
+						<label for="newLastName">Updated Last Name:</label>
+						<input
+							type="text"
+							id="newLastName"
+							placeholder="TODO put user last name here"
+						/>
+					</div>
+				</div>
+
 				<!-- for updating password -->
-				<div>
+				<div class="update-one-detail">
 					<!-- enter the password the first time -->
-					<div>
-					<label for="newPassword">New Password:</label>
-					<input type="text" id="newPassword" placeholder="New password">
-					</div>	
+					<div class="label-and-input-box">
+						<label for="newPassword">New Password:</label>
+						<input
+							type="password"
+							id="newPassword"
+							placeholder="New password"
+						/>
+					</div>
 
 					<!-- confirm the password -->
-					<div>
-						<label for="confirmNewPassword">Confirm Password:</label>
-						<input type="text" id="confirmNewPassword" placeholder="Confirm password">
+					<div class="label-and-input-box">
+						<label for="confirmNewPassword"
+							>Confirm Password:</label
+						>
+						<input
+							type="password"
+							id="confirmNewPassword"
+							placeholder="Confirm password"
+						/>
 					</div>
+				</div>
 
-					<!-- confirmation button -->
-					<div>
-						<input type="button" value="Submit" id="submitEditedProfile">
-					</div>
+				<div id="formErrors"></div>
+				<!-- Form errors will be displayed here -->
+
+				<!-- confirmation button -->
+				<div class="submit-btn-div">
+					<input
+						type="button"
+						value="Submit"
+						id="submitEditedProfile"
+					/>
 				</div>
 			</div>
 		</div>
