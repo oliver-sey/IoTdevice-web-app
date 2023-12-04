@@ -1,10 +1,13 @@
-let requestBody = {
-    email: "",
-    password: ""
-}
-
 $(document).ready(()=>{
     console.log("hostname", window.location.hostname)
+
+	// setting the placeholders for the first name and last name, to be the
+	// user's first name and last name. 
+	// This makes it convenient for the user to make edits to their details, and we
+	// can just send all the values that are in the text inputs, whether they edited it or not,
+	// to the server to update
+	setPlaceholders();
+	
     // call the function that will add all the click handlers
     // we put this in a function because it didn't seem to add the handlers
     // if we did it outside a function
@@ -12,36 +15,35 @@ $(document).ready(()=>{
     addClickHandlers()
 })
 
+// setting the placeholder values for the first name and last name inputs, more explanation in document.ready
+function setPlaceholders() {
+	// TODO: get the user's first name and last name, and make that the placeholder text in the input where they
+	// put their new first name and last name
+	console.log("in setPlaceholders(), have to still implement this!!");
+}
+
 // **** put all your adding click handlers in here!!!
 // this gets called when the document is ready
 function addClickHandlers() {
-    console.log("in the addClickHandlers function")
+    console.log("in the addClickHandlers function in updateAccount")
     
     // when you click 'Sign up' button on the login screen, call logIn()
-    $("#submit").click((event) => {
+    $("#submitEditedProfile").click((event) => {
         event.preventDefault(); // Prevent form submission
 
 		let formErrors = document.getElementById("formErrors");
 		formErrors.innerHTML = "";
 		formErrors.style.display = "none";
 
-		let email = document.getElementById("email");
-		let password = document.getElementById("password");
-		let confirmPassword = document.getElementById("passwordConfirm");
+		let password = document.getElementById("newPassword");
+		let confirmPassword = document.getElementById("confirmNewPassword");
 		let errors = [];
 
-		console.log("Email: " + email.value);
         // TODO: get rid of this!!!!
 		console.log("Password: " + password.value);
 
-		// TODO: !!!! if you change anything with the password checks here, remember to change it in updatePassword!!!!
 		// perform checks. CURRENTLY DOES NOT CHECK FOR FULL ENGLISH WORDS, MAY HAVE TO ADD THAT LATER DEPENDING
-		if (
-			!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/.test(email.value)
-		) {
-			errors.push("Invalid or missing email address.");
-			email.classList.add("error");
-		}
+		// *** users can't edit their email
 
 		if (10 > password.value.length || password.value.length > 20) {
 			errors.push("Password must be between 10 and 20 characters.");
@@ -80,34 +82,21 @@ function addClickHandlers() {
 			formErrors.style.display = "block";
 		} 
 		else {
-            signUp()
+            updateAccount()
 		}
     })
 }
 
-function setRequestBody() {
-    requestBody.email = $("#email").val()
-    requestBody.password = $("#password").val()
-    console.log("requestBody", requestBody)
-}
+function updateAccount() {
+	console.log("in updateAccount() in updateAccount.js, have to still implement this!!");
 
-function signUp() {
-    console.log("In the signUp() function")
-    setRequestBody()
-    $.ajax({
-		// hard coded for testing. CHANGE HERE LATER!!! DELETE: http://localhost:3000
-        url: "/users/create", 
-        method: "POST",
-        data: JSON.stringify(requestBody),
-        contentType: "application/json",
-        dataType: "json"
-     })
-     .always(function(data) {
-        console.log("result", data)
-        window.location.assign("signin.html")
-        alert("Sign up Success! Now please Sign in")
-     })
-     .done(function(data) {
-        console.log("signUp success", data);
-     });
+	// trim whitespace off the front and end
+	let newFirstName = $("#newFirstName").value.trim();
+	let newLastName = $("#newLastName").value.trim();
+
+	// **by this point we have checked that the password and the confirm password are the same
+	let newPassword = $("#newPassword").value;
+
+
+	// TODO: update account here!!!
 }
