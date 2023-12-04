@@ -34,6 +34,7 @@ function addClickHandlers() {
         // TODO: get rid of this!!!!
 		console.log("Password: " + password.value);
 
+		// TODO: !!!! if you change anything with the password checks here, remember to change it in updatePassword!!!!
 		// perform checks. CURRENTLY DOES NOT CHECK FOR FULL ENGLISH WORDS, MAY HAVE TO ADD THAT LATER DEPENDING
 		if (
 			!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/.test(email.value)
@@ -73,7 +74,7 @@ function addClickHandlers() {
 
 		if (errors.length > 0) {
 			formErrors.innerHTML =
-				'<ul class = "text-danger list-unstyled"><li>' +
+				'<ul class = "form-errors text-danger list-unstyled"><li>' +
 				errors.join("</li><li>") +
 				"</li></ul>";
 			formErrors.style.display = "block";
