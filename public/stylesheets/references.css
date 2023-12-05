@@ -1,0 +1,10 @@
+.subtitle-p {
+	margin: 1%;
+	/* a little indent on the left */
+	margin-left: 1%;
+	font-size: medium;
+}
+
+.one-section {
+	margin-bottom: 3%;
+}
