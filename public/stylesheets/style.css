@@ -30,3 +30,8 @@ img {
   height: auto;
   max-width: 50vw;
 }
+
+/* for creating an account, and then also updating your account */
+.form-errors {
+  color: red;
+}

@@ -36,7 +36,8 @@ function registerDevice() {
             method: "POST",
             data: JSON.stringify(device),
             contentType: "application/json",
-            dataType: "json"
+            dataType: "json",
+            headers: {"x-access-token" : localStorage.getItem('jwt')}
         })
         .done(function(res) {
             console.log("backend res", res)

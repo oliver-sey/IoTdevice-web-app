@@ -1,0 +1,33 @@
+.update-container {
+	display: flex;
+	justify-content: center;
+}
+
+/* the div to update one thing i.e. either your password or your first name, or ... */
+.update-one-detail {
+	margin: 3%;
+}
+
+label {
+	margin-right: 5%;
+}
+/* one div that has the label on the left, and the input box to update name, password, etc. on the right */
+.label-and-input-box {
+	display: flex;
+	/* TODO: which should we use? */
+	/* justify-content: space-around; */
+	justify-content: space-between;
+
+	margin: 1%;
+}
+
+/* the div for the submit button */
+.submit-btn-div {
+	display: flex;
+	justify-content: center;
+}
+
+/* the button to submit */
+#submitEditedProfile {
+	margin: 2%;
+}
