@@ -1,0 +1,9 @@
+.welcome-msg-div {
+	display: flex;
+	justify-content: center;
+	margin: 1.5%;
+}
+
+.all-page-contents {
+	width: 100vw;
+}
