@@ -29,6 +29,7 @@
     
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="javascript/loggedInPage.js"></script>
+		<!-- bootstrap CSS -->
 		<link
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -57,16 +58,18 @@
 					<th align="left">Detailed Daily View</th>
 				</tr>
 			</table>
-			<button type="button" id="newDevice">
+			<!-- <button type="button" id="newDevice">
 				Register a NEW DEVICE!!
-			</button>
+			</button> -->
+			<button class="btn btn-med btn-primary" type="button" id="newDevice">Register a New Device</button>
 			<p>
 				Note: If your device doesn't have any data on Particle/Webhook
 				or data from the past week/selected time, it will display an
 				empty chart, so please make sure your device has data already in
 				the cloud before you view the charts! Thank you so much!!!
 			</p>
-			<button id="logOut" type="button">Log out</button>
+			<!-- <button id="logOut" type="button">Log out</button> -->
+			<button class="btn btn-med btn-danger" type="button" id="logOut">Log Out</button>
 		</div>
 
 		<!-- make sure to import these for navbar to work -->
