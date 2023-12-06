@@ -7,6 +7,10 @@ let device = {
 }
 
 $(document).ready(()=>{
+    if (!localStorage.getItem('jwt')) {//check if user logged in yet
+        alert('Please log in first...')
+        window.location.assign("signin.html")
+    }
     console.log("hostname", window.location.hostname)
     // call the function that will add all the click handlers
     // we put this in a function because it didn't seem to add the handlers
