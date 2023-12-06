@@ -7,3 +7,22 @@
 .all-page-contents {
 	width: 100vw;
 }
+
+table,
+td,
+th {
+	border: solid 1px black;
+}
+
+.table {
+	margin: 20px 0px;
+}
+
+p {
+	color: red;
+	width: 420px;
+	height: 130px;
+	margin: 20px 0px;
+	padding: 5px;
+	border: solid 1px black;
+}

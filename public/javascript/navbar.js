@@ -23,23 +23,43 @@ function loadNavbar() {
                     <li class="nav-item">
                         <a class="nav-link" href="./LoggedInPage.html">Your Devices</a>
                     </li>
-                    <li class="nav-item">
+
+                    <!-- dropdown for detailed daily and weekly -->
+                    <li>
+                        <div class="btn-group">
+                        <button type="button" class="btn btn-primary-outline dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            View Your Data
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="./weeklysummary.html">Weekly Summary</a>
+                            <a class="dropdown-item" href="./detaileddaily.html">Detailed Daily</a>
+                            <!-- <div class="dropdown-divider"></div> -->
+                            <!-- <a class="dropdown-item" href="#">Separated link</a> -->
+                        </div>
+                        </div>
+                    </li>
+
+
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="./weeklysummary.html">Weekly Summary</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./detaileddaily.html">Detailed Daily</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="./index.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./accountsettings.html">Account Settings</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="./references.html">References</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./accountsettings.html">Account Settings</a>
+                    </li>
                     <li class = "nav-item">
-                        <a class="nav-link logout-link" href="./signin.html">Logout</a>
+                    <button type="button" class="btn btn-secondary logout-link" href="./signin.html">
+                        Logout
+                    </button>
+                        <!-- <a class="nav-link logout-link" href="./signin.html">Logout</a> -->
                     </li>
                 </ul>
             </div>

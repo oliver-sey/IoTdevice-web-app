@@ -3,6 +3,7 @@
 .the-team-container {
 	display: flex;
 	flex-direction: column;
+	width: 95%;
 }
 
 .one-section-title {
@@ -12,35 +13,42 @@
 
 .one-member-container {
 	display: flex;
+	flex-direction: column;
+}
+
+.team-member-text-div {
+	display: flex;
 	flex-direction: row;
 }
 
 .team-member-pic {
-	max-width: 50%;
+	/* max-width: 50%; */
+	/* some margin at the bottom when the picture is right above the text, 
+	will get rid of this margin when the viewport gets wider and the text goes to the side */
+	margin-bottom: 10px;
 }
 
 /* media queries */
 
-/* TODO: Add media query for 800px breakpoint */
-/* Use the .vacation-container img selector to change the image width to 50vw 
-so vacation images occupy half the viewport's width. */
-
-/* Use the .vacation-container selector to make the vacation descriptions appear 
-to the right of the vacation images instead of underneath. */
-
-/* Use the .vacation-container > div selector to add a 20px margin between 
-the vacation descriptions and images. */
-@media (min-width: 800px) {
-	.team-member-pic {
-	   width: 50vw;
-	}
- 
+/* at >= 750px viewport width, set the text to display to the right of the picture */
+@media (min-width: 750px) {
 	.one-member-container {
 	   /* TODO: make the descriptions appear to the right */
 	   flex-direction: row;
+	   margin-bottom: 3%;
+	}
+
+	.team-member-pic {
+		margin-bottom: 1%;
+		/* width: 50vw; */
 	}
  
 	.one-member-container > div {
-	   margin: 20px;
+	   margin-left: 15px;
+	}
+
+	.team-member-text-div {
+		margin-left: 20px;
+		margin-top: 20px;
 	}
  }
