@@ -2,7 +2,8 @@ let device = {
     email: "",
     deviceName: "",
     channelID: "",
-    readAPI_Key: ""
+    readAPI_Key: "",
+    register_Date: ""
 }
 
 $(document).ready(()=>{
@@ -59,5 +60,10 @@ function setRequestBody() {
     device.deviceName = $("#deviceName").val()
     device.channelID = $("#channelID").val()
     device.readAPI_Key = $("#readAPI_Key").val()
+    let today = new Date();
+    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let dateTime = date+' '+time;
+    device.register_Date = dateTime
     console.log("device content", device)
 }

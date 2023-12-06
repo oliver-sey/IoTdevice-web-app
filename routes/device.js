@@ -44,7 +44,8 @@ router.post('/register', (req, res) => {
         email: req.body.email,
         deviceName: req.body.deviceName,
         channelID: req.body.channelID,
-        readAPI_Key: req.body.readAPI_Key
+        readAPI_Key: req.body.readAPI_Key,
+        register_Date: req.body.register_Date
       })
       newDevice.save().then(result => {
         res.status(201).send(result)
@@ -58,5 +59,21 @@ router.post('/register', (req, res) => {
       console.log("register device failed", err)
     }
   });
+
+
+router.delete('/delete', (req, res) => {
+  try {
+    Device.deleteOne({deviceName: req.body.deviceName}).then(result => {
+      res.status(200).send(result)
+      console.log("deleted", result)
+    }).catch(err => {
+      res.status(400).send({"error" : "delete failed"})
+      console.log("delete failed", err)
+    })
+  }
+  catch (err) {
+    console.log("delete device failed", err)
+  }
+})
 
   module.exports = router;
