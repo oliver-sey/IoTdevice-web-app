@@ -4,13 +4,14 @@ var User = require("../models/users");
 const jwt = require("jwt-simple");
 const secret = "1z98AJf901JZAa"
 const bcrypt = require("bcryptjs");
+const salt = "oihweoif"//use for salted hashing password
 
 
 /* Get user account(Login) */
 router.post('/user', (req, res) => {
   User.findOne({email: req.body.email}).then(result => {//find one user info in mongodb
     console.log("result", result)
-    if (result !== null && result.length !== 0 && bcrypt.compareSync(req.body.password, result.password)) {//check if password matches the hashed password inside the database
+    if (result !== null && result.length !== 0 && bcrypt.compareSync(req.body.password + salt, result.password)) {//check if password matches the hashed password inside the database
         // add JWT token calculation
         const jwtString = jwt.encode({email:req.body.email}, secret);//send back teh JWT token
         res.status(200).send({result: result, jwt: jwtString})
@@ -27,7 +28,7 @@ router.post('/user', (req, res) => {
 /* Post user account (create account)*/
 router.post('/create', (req, res) => {
   console.log("create account")
-  const encryptedPassword = bcrypt.hashSync(req.body.password, 10)//hash the user password
+  const encryptedPassword = bcrypt.hashSync(req.body.password + salt, 10)//hash the user password
   console.log("hash password", encryptedPassword)
   try {
     const newUser = new User({//create User Model with encrypted password
@@ -50,7 +51,7 @@ router.post('/create', (req, res) => {
 
 /* Patch user account */
 router.patch('/update', (req, res) => {
-  const encryptedPassword = bcrypt.hashSync(req.body.password, 10)//hash the user password
+  const encryptedPassword = bcrypt.hashSync(req.body.password + salt, 10)//hash the user password
   console.log("hash password", encryptedPassword)
   User.updateOne({email: req.body.email}, {password: encryptedPassword, userName: req.body.userName}).then(result => {//update new user info from user input
     res.status(200).send(result)//if success, send back the result
