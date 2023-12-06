@@ -11,7 +11,10 @@
 function loadNavbar() {
     document.getElementById('navbar-placeholder').innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Heartrate Helper</a>
+        
+            <a class="navbar-brand" href="LoggedInPage.html">
+            <img src="/images/heart-stethoscope-no-bg.svg" width="30" height="30"class="d-inline-block align-top" alt="" style="margin-right:4%;">Heartrate Helper
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
