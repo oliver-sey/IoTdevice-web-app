@@ -1,10 +1,11 @@
-/* .centered {
+.centered {
 	display: flex;
 	justify-content: center;
-} */
+}
 
 .update-container {
 	margin: 2%;
+	width: 60%;
 }
 
 /* the div to update one thing i.e. either your password or your first name, or ... */
@@ -19,8 +20,8 @@ label {
 .label-and-input-box {
 	display: flex;
 	/* TODO: which should we use? */
-	justify-content: space-around;
-	/* justify-content: space-between; */
+	/* justify-content: space-around; */
+	justify-content: space-between;
 
 	margin: 1%;
 }
@@ -34,4 +35,13 @@ label {
 /* the button to submit */
 #submitEditedProfile {
 	margin: 2%;
+}
+
+
+/* at <= 750px viewport width, set the update container to be the whole screen width
+we want it to take up less width when the viewport is wider */
+@media (max-width: 750px) {
+	.update-container {
+		width: 100%;
+	}
 }
