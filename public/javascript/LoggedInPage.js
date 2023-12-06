@@ -16,14 +16,8 @@ $(document).ready(()=>{
         console.log("my devices", res, res.length)
         //ex https://api.thingspeak.com/channels/2349152/charts/1?api_key=MPQACWXEJVYHLC7K
         for (let i = 0; i < res.length; i++) {
-            $('tr').after(`<tr id="${i + 1}"> <td>${i + 1}</td> <td>${res[i].deviceName}</td> <td>${res[i].register_Date}</td>  <td><button id="btn${i + 1}">delete</button></td></tr>`)
+            $(`#r${i}`).after(`<tr id="r${i + 1}"> <td>${i + 1}</td> <td>${res[i].deviceName}</td> <td>${res[i].register_Date}</td>  <td><button id="btn${i + 1}">delete</button></td></tr>`)
 
-            $(`#date${i+1}`).change(() => {
-                console.log($(`#date${i+1}`).val())
-            })
-            // $(`#button${i+1}`).click(() => {
-            //     window.location.assign(`https://api.thingspeak.com/channels/${res[i].channelID}/charts/1?api_key=${res[i].readAPI_Key}&title=YourHeartRateAt:${$(`#date${i+1}`).val()}&start=${$(`#date${i+1}`).val()}`)
-            // })
             $(`#btn${i + 1}`).click(() => {
                 $.ajax({
                     url: "/device/delete",
