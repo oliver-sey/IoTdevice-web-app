@@ -21,69 +21,85 @@
 		<!-- add this placeholder in -->
 		<div id="navbar-placeholder"></div>
 
-		<!-- page stuff goes here -->
-		<!-- for all the page contents -->
-		<div style="margin-left: 3%; margin-right: 3%">
-			<!-- for the heading -->
-			<div class="one-section">
-				<!-- for the title text -->
-				<div style="margin-top: 2%; margin-bottom: 1%">
-					<h1>Some resources we used:</h1>
-				</div>
-				<!-- for some subheading text -->
-				<div>
-					<p class="subtitle-p">
-						For some parts of this project, we didn't want to
-						reinvent the wheel, when beautiful and responsive UI
-						components, or library with the features that we needed,
-						already exist. Here is a list of outside resources we
-						used.
-					</p>
-				</div>
-			</div>
-            
-            <!-- for bootstrap -->
-			<div class="one-section">
-				<!-- div for the title of this section -->
-				<div>
-					<h2>Bootstrap</h2>
-				</div>
-				<!-- div for some description -->
-				<div>
-					<p class="subtitle-p">
-						We used the Bootstrap library for some UI components.
-						The navbar on our site, the design of the sign-in and
-						sign-up pages, and a few other components come from
-						Bootstrap.
-					</p>
-				</div>
-			</div>
 
-            <div class="one-section">
-				<!-- div for the title of this section -->
-				<div>
-					<h2>TODO: other library goes here</h2>
-				</div>
-				<!-- div for some description -->
-				<div>
-					<p class="subtitle-p">
-						TODO: other text goes here to describe this library.
-					</p>
-				</div>
-			</div>
-		</div>
+    <!-- page stuff goes here -->
+    <!-- for all the page contents -->
+    <div style="margin-left: 3%; margin-right: 3%">
+      <!-- for the heading -->
+      <div class="one-section">
+        <!-- for the title text -->
+        <div style="margin-top: 2%; margin-bottom: 1%">
+          <h1>Some resources we used:</h1>
+        </div>
+        <!-- for some subheading text -->
+        <div>
+          <p class="subtitle-p">
+            For some parts of this project, we didn't want to reinvent the
+            wheel, when beautiful and responsive UI components, or library with
+            the features that we needed, already exist. Here is a list of
+            outside resources we used.
+          </p>
+        </div>
+      </div>
 
-		<!-- make sure to import these for navbar to work -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <!-- for bootstrap -->
+      <div class="one-section">
+        <!-- div for the title of this section -->
+        <div>
+          <h2>Bootstrap</h2>
+        </div>
+        <!-- div for some description -->
+        <div>
+          <p class="subtitle-p">
+            We used the Bootstrap library for some UI components. The navbar on
+            our site, the design of the sign-in and sign-up pages, and a few
+            other components come from Bootstrap.
+          </p>
+        </div>
+      </div>
 
-		<!-- load in the navbar on page run -->
-		<script src="javascript/navbar.js"></script>
-		<script>
-			window.onload = function () {
-				loadNavbar();
-			};
-		</script>
-	</body>
+      <div class="one-section">
+        <!-- div for the title of this section -->
+        <div>
+          <h2>TODO: other library goes here</h2>
+        </div>
+        <!-- div for some description -->
+        <div>
+          <p class="subtitle-p">
+            TODO: other text goes here to describe this library.
+          </p>
+        </div>
+      </div>
+      <div class="one-section">
+        <!-- div for the title of this section -->
+        <div id="readme-text">
+          <h2>readme-text</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- make sure to import these for navbar to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- load in the navbar on page run -->
+    <script src="javascript/navbar.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      fetch("../docs/backend/api.md") // The path to the raw Markdown file
+        .then((response) => response.blob()) // Unwrap to a blob...
+        .then((blob) => blob.text()) // ...then to raw text...
+        .then((markdown) => {
+          // ...then pass the raw text into marked.parse
+          document.getElementById("readme-text").innerHTML =
+            marked.parse(markdown);
+        });
+    </script> -->
+    <script>
+      window.onload = function () {
+        loadNavbar();
+      };
+    </script>
+  </body>
 </html>

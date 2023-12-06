@@ -1,11 +1,16 @@
-let device = {
+let device = {// use as device's request body
     email: "",
     deviceName: "",
     channelID: "",
-    readAPI_Key: ""
+    readAPI_Key: "",
+    register_Date: ""
 }
 
 $(document).ready(()=>{
+    if (!localStorage.getItem('jwt')) {//check if user logged in yet
+        alert('Please log in first...')
+        window.location.assign("signin.html")
+    }
     console.log("hostname", window.location.hostname)
     // call the function that will add all the click handlers
     // we put this in a function because it didn't seem to add the handlers
@@ -23,7 +28,7 @@ function addClickHandlers() {
 function registerDevice() {
     console.log("registerDevice()")
     setRequestBody()
-    $.ajax({
+    $.ajax({//ajax call for checking whether such device has thingspeak and particle website set up
         url: `https://api.thingspeak.com/channels/${device.channelID}/feeds.json?api_key=${device.readAPI_Key}`,
         method: "GET",
         contentType: "application/json",
@@ -31,7 +36,7 @@ function registerDevice() {
     })
     .done(function(data) {
         console.log("get device data", data)
-        $.ajax({
+        $.ajax({// if success, register such device into database
             url: '/device/register',
             method: "POST",
             data: JSON.stringify(device),
@@ -54,10 +59,15 @@ function registerDevice() {
      })
 }
 
-function setRequestBody() {
+function setRequestBody() {// set user input as request body, also add register time to let user know their device register time
     device.email = localStorage.getItem('email')
     device.deviceName = $("#deviceName").val()
     device.channelID = $("#channelID").val()
     device.readAPI_Key = $("#readAPI_Key").val()
+    let today = new Date();
+    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let dateTime = date+' '+time;
+    device.register_Date = dateTime
     console.log("device content", device)
 }

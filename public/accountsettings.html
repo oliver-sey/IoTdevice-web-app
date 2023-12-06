@@ -1,113 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Account Settings</title>
 
-        <!-- favicon (little logo in the browser) -->
-        <link rel="icon" href="../images/heart-stethoscope.svg" />
-		<link
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Account Settings</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- link for js and jquery for ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- import the JS file -->
+    <script src="javascript/accountsettings.js"></script>
+    <!-- Our CSS for all pages -->
+    <!-- this is important because it has CSS for the form errors div -->
+    <link href="stylesheets/style.css" rel="stylesheet" />
+    <!-- **CSS just for this page -->
+    <link href="/stylesheets/accountsettings.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- add this placeholder in -->
+    <div id="navbar-placeholder"></div>
 
-        <!-- Our CSS for all pages -->
-		<!-- this is important because it has CSS for the form errors div -->
-		<link href="stylesheets/style.css" rel="stylesheet" />
-		<!-- **CSS just for this page -->
-		<link href="/stylesheets/accountsettings.css" rel="stylesheet" />
+    <!-- page stuff goes here -->
+    <!-- currently there's only email and password -->
 
-	</head>
-	<body>
-		<!-- add this placeholder in -->
-		<div id="navbar-placeholder"></div>
+    <!-- for the whole page contents?-->
+    <div>
+      <!-- for the container that holds the update account stuff -->
+      <div class="update-container">
+        <h2>You can edit your profile details here:</h2>
+        <h3>
+          TODO: get rid of first and last name section, if we never end up
+          adding that to the database, route, etc.!
+        </h3>
+        <!-- for updating first name -->
+        <div class="update-one-detail">
+          <!-- enter the first name, probably don't need to have them confirm it -->
+          <div class="label-and-input-box">
+            <label for="newFirstName">Updated User Name:</label>
+            <input
+              type="text"
+              id="userName"
+              placeholder="TODO put user first name here"
+            />
+          </div>
+        </div>
 
-		<!-- page stuff goes here -->
-		<!-- currently there's only email and password -->
+        <!-- for updating password -->
+        <div class="update-one-detail">
+          <!-- enter the password the first time -->
+          <div class="label-and-input-box">
+            <label for="newPassword">New Password:</label>
+            <input
+              type="password"
+              id="newPassword"
+              placeholder="New password"
+            />
+          </div>
 
-		<!-- for the whole page contents?-->
-		<div>
-			<!-- for the container that holds the update account stuff -->
-			<div class="update-container">
-				<h2>You can edit your profile details here:</h2>
-                <h3>TODO: get rid of first and last name section, if we never end up adding that to the database, route, etc.!</h3>
-				<!-- for updating first name -->
-				<div class="update-one-detail">
-					<!-- enter the first name, probably don't need to have them confirm it -->
-					<div class="label-and-input-box">
-						<label for="newFirstName">Updated First Name:</label>
-						<input
-							type="text"
-							id="newFirstName"
-							placeholder="TODO put user first name here"
-						/>
-					</div>
-				</div>
+          <!-- confirm the password -->
+          <div class="label-and-input-box">
+            <label for="confirmNewPassword">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirmNewPassword"
+              placeholder="Confirm password"
+            />
+          </div>
+        </div>
 
-				<!-- for updating last name -->
-				<div class="update-one-detail">
-					<!-- enter the last name, probably don't need to have them confirm it -->
-					<div class="label-and-input-box">
-						<label for="newLastName">Updated Last Name:</label>
-						<input
-							type="text"
-							id="newLastName"
-							placeholder="TODO put user last name here"
-						/>
-					</div>
-				</div>
+        <div id="formErrors"></div>
+        <!-- Form errors will be displayed here -->
 
-				<!-- for updating password -->
-				<div class="update-one-detail">
-					<!-- enter the password the first time -->
-					<div class="label-and-input-box">
-						<label for="newPassword">New Password:</label>
-						<input
-							type="password"
-							id="newPassword"
-							placeholder="New password"
-						/>
-					</div>
+        <!-- confirmation button -->
+        <div class="submit-btn-div">
+          <button type="button" id="update">Update</button>
+        </div>
+      </div>
+    </div>
 
-					<!-- confirm the password -->
-					<div class="label-and-input-box">
-						<label for="confirmNewPassword"
-							>Confirm Password:</label
-						>
-						<input
-							type="password"
-							id="confirmNewPassword"
-							placeholder="Confirm password"
-						/>
-					</div>
-				</div>
+    <!-- make sure to import these for navbar to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-				<div id="formErrors"></div>
-				<!-- Form errors will be displayed here -->
-
-				<!-- confirmation button -->
-				<div class="submit-btn-div">
-					<input
-						type="button"
-						value="Submit"
-						id="submitEditedProfile"
-					/>
-				</div>
-			</div>
-		</div>
-
-		<!-- make sure to import these for navbar to work -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-		<!-- load in the navbar on page run -->
-		<script src="javascript/navbar.js"></script>
-		<script>
-			window.onload = function () {
-				loadNavbar();
-			};
-		</script>
-	</body>
+    <!-- load in the navbar on page run -->
+    <script src="javascript/navbar.js"></script>
+    <script>
+      window.onload = function () {
+        loadNavbar();
+      };
+    </script>
+  </body>
 </html>

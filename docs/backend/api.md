@@ -4,7 +4,7 @@
 ### 1. create account
 **route:**
 ```
-'aws_publicDNS/users/create'
+'aws_publicDNS:3000/users/create'
 ```
 #### Request body:
 

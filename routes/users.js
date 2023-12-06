@@ -8,12 +8,12 @@ const bcrypt = require("bcryptjs");
 
 /* Get user account(Login) */
 router.post('/user', (req, res) => {
-  User.findOne({email: req.body.email}).then(result => {
+  User.findOne({email: req.body.email}).then(result => {//find one user info in mongodb
     console.log("result", result)
     if (result !== null && result.length !== 0 && bcrypt.compareSync(req.body.password, result.password)) {//check if password matches the hashed password inside the database
         // add JWT token calculation
-        const jwtString = jwt.encode({email:req.body.email}, secret);
-        res.status(200).send({email:req.body.email, password:req.body.password, jwt:jwtString})
+        const jwtString = jwt.encode({email:req.body.email}, secret);//send back teh JWT token
+        res.status(200).send({result: result, jwt: jwtString})
         console.log("get", result)
     }
     else{
@@ -30,11 +30,12 @@ router.post('/create', (req, res) => {
   const encryptedPassword = bcrypt.hashSync(req.body.password, 10)//hash the user password
   console.log("hash password", encryptedPassword)
   try {
-    const newUser = new User({
+    const newUser = new User({//create User Model with encrypted password
       email: req.body.email,
-      password: encryptedPassword
+      password: encryptedPassword,
+      userName: req.body.userName
     })
-    newUser.save().then(result => {
+    newUser.save().then(result => {//save that new user info into mongodb
       res.status(201).send({"success" : result})
       console.log("created", result)
     }).catch(err => {
@@ -49,8 +50,10 @@ router.post('/create', (req, res) => {
 
 /* Patch user account */
 router.patch('/update', (req, res) => {
-  User.updateOne({email: req.body.email}, {$set: {password: req.body.password}}).then(result => {
-    res.status(200).send({"success" : "user updated"})
+  const encryptedPassword = bcrypt.hashSync(req.body.password, 10)//hash the user password
+  console.log("hash password", encryptedPassword)
+  User.updateOne({email: req.body.email}, {password: encryptedPassword, userName: req.body.userName}).then(result => {//update new user info from user input
+    res.status(200).send(result)//if success, send back the result
       console.log("updated", result)
   }).catch(err => {
     res.status(400).send({"error" : "update failed"});

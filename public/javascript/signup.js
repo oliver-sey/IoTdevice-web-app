@@ -1,4 +1,5 @@
-let requestBody = {
+let requestBody = {//request body for ajax call
+	userName: "",
     email: "",
     password: ""
 }
@@ -18,7 +19,7 @@ function addClickHandlers() {
     console.log("in the addClickHandlers function")
     
     // when you click 'Sign up' button on the login screen, call logIn()
-    $("#submit").click((event) => {
+    $("#submit").click((event) => {//if user click submit for sign up
         event.preventDefault(); // Prevent form submission
 
 		let formErrors = document.getElementById("formErrors");
@@ -85,24 +86,24 @@ function addClickHandlers() {
     })
 }
 
-function setRequestBody() {
+function setRequestBody() {// get user input as request body
     requestBody.email = $("#email").val()
     requestBody.password = $("#password").val()
+	requestBody.userName = $('#userName').val()
     console.log("requestBody", requestBody)
 }
 
 function signUp() {
     console.log("In the signUp() function")
     setRequestBody()
-    $.ajax({
-		// hard coded for testing. CHANGE HERE LATER!!! DELETE: http://localhost:3000
+    $.ajax({// ajax call to create a user account
         url: "/users/create", 
         method: "POST",
         data: JSON.stringify(requestBody),
         contentType: "application/json",
         dataType: "json"
      })
-     .always(function(data) {
+     .always(function(data) {// if success, redirect to sign in page
         console.log("result", data)
         window.location.assign("signin.html")
         alert("Sign up Success! Now please Sign in")
