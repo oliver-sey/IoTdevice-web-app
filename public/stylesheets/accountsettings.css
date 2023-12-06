@@ -1,6 +1,10 @@
-.update-container {
+/* .centered {
 	display: flex;
 	justify-content: center;
+} */
+
+.update-container {
+	margin: 2%;
 }
 
 /* the div to update one thing i.e. either your password or your first name, or ... */
@@ -15,8 +19,8 @@ label {
 .label-and-input-box {
 	display: flex;
 	/* TODO: which should we use? */
-	/* justify-content: space-around; */
-	justify-content: space-between;
+	justify-content: space-around;
+	/* justify-content: space-between; */
 
 	margin: 1%;
 }
