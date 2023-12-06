@@ -10,10 +10,13 @@
       .table {
         margin: 20px 0px;
       }
-      p {
+	  h3 {
+		padding-left: 20px;
+	  }
+      #p1 {
         color: red;
         width: 420px;
-        height: 130px;
+        height: 160px;
         margin: 20px 0px;
         padding: 5px;
         border: solid 1px black;
@@ -29,7 +32,7 @@
       rel="stylesheet"
     />
     <!-- Our CSS for all pages -->
-		<link href="stylesheets/style.css" rel="stylesheet" />
+    <link href="stylesheets/style.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="stylesheets/LoggedInPage.css" rel="stylesheet" />
   </head>
@@ -42,8 +45,8 @@
     <div class="all-page-contents">
       <div class="welcome-msg-div">
         <h1>Hello, Welcome to Heartrate Helper!</h1>
-      </div>
-      <h3>Hi <span id="userName"></span></h3>
+	  </div>
+	  <h3>Hi <span id="userName"></span></h3>
       <h3 id="deviceStart">Your Devices:</h3>
       <table class="table" style="width: 100%">
         <tr id="r0">
@@ -53,18 +56,21 @@
           <th align="left">Delete Device:</th>
         </tr>
       </table>
-<!--       <button type="button" id="newDevice">Register a NEW DEVICE!!</button> -->
-      <button class="btn btn-med btn-primary" type="button" id="newDevice">Register a New Device</button>
+      <!--       <button type="button" id="newDevice">Register a NEW DEVICE!!</button> -->
+      <button class="btn btn-med btn-primary" type="button" id="newDevice">
+        Register a New Device
+      </button>
 
-      <p>
+      <p id="p1">
         Note: If your device doesn't have any data on Particle/Webhook or data
         from the past week/selected time, it will display an empty chart, so
         please make sure your device has data already in the cloud before you
         view the charts! Thank you so much!!!
       </p>
       <!--       <button id="logOut" type="button">Log out</button> -->
-      <button class="btn btn-med btn-danger" type="button" id="logOut">Log Out</button>
-
+      <button class="btn btn-med btn-danger" type="button" id="logOut">
+        Log Out
+      </button>
     </div>
 
     <!-- make sure to import these for navbar to work -->
