@@ -46,6 +46,7 @@ function logIn() {
      })
      .done(function(data) {
         console.log("response data", data)
+        localStorage.setItem("userName", data.userName)
         localStorage.setItem("email", data.email)
         localStorage.setItem("password", data.password)
         localStorage.setItem("jwt", data.jwt)
