@@ -1,0 +1,10 @@
+/* CSS for one-section is in style.css */
+
+.one-section-title {
+	margin-top: 2%;
+	margin-bottom: 1%;
+}
+
+.team-member-pic {
+	max-width: 50%;
+}

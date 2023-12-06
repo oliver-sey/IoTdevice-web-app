@@ -1,177 +1,118 @@
+<!-- ***a new index page, without the bootstrap grid template -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- got all this code from the "grids" example on the bootstrap -->
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <!-- TODO: add a favicon -->
-        <link rel="icon" href="../images/heart-stethoscope.svg" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>About Us</title>
+		<link
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
 
-        <title>Grid Template for Bootstrap</title>
+		<!-- Our CSS for all pages -->
+		<!-- TODO: *****commented out for now bc it messes with the navbar -->
+		<link href="stylesheets/style.css" rel="stylesheet" />
+		<!-- Custom styles for this template -->
+		<link href="/stylesheets/index.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- add this placeholder in -->
+		<div id="navbar-placeholder"></div>
 
-        <!-- Bootstrap core CSS -->
-        <!-- TODO: is there a better way to give file locations than this? -->
-        <link
-            href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
+		<!-- page stuff goes here -->
+		<!-- for all the page contents -->
+		<div style="margin-left: 3%; margin-right: 3%">
+			<!-- about the project -->
+			<div class="one-section">
+				<!-- for the title text -->
+				<div style="margin-top: 2%; margin-bottom: 1%">
+					<h1>About the Project:</h1>
+				</div>
+				<!-- for some subheading text -->
+				<div>
+					<p class="subtitle-p">
+						TODO: put text here talking about the project
+					</p>
+				</div>
+			</div>
 
-        <!-- Custom styles for this template -->
-        <!-- TODO: do we want to get rid of this stylesheet? -->
-        <!-- <link href="/stylesheets/grid.css" rel="stylesheet" /> -->
+			<!-- about the team -->
+			<div class="one-section">
+				<!-- for the title text -->
+				<div class="one-section-title">
+					<h1>About the Team:</h1>
+				</div>
+				<!-- the actual content about the team -->
+				<div>
+					<!-- Hsinwei -->
+					<div>
+						<!-- name -->
+						<div>
+							<h2>Hsinwei Lin</h2>
+						</div>
+						<img
+							src="/images/hsinwei.jpg"
+							alt="Hsinwei picture"
+							class="team-member-pic"
+						/>
+						<div class="team-member-text-div">
+							<p class="team-member-text-p">
+								text here about hsinwei
+							</p>
+						</div>
+					</div>
 
+					<!-- smalliver -->
+					<div>
+						<!-- name -->
+						<div>
+							<h2>Oliver Seymour</h2>
+						</div>
+						<img
+							src="/images/hsinwei.jpg"
+							alt="Hsinwei picture"
+							class="team-member-pic"
+						/>
+						<div class="team-member-text-div">
+							<p class="team-member-text-p">
+								text here about hsinwei
+							</p>
+						</div>
+					</div>
 
-        <!-- the general stylesheet -->
-        <link href="/stylesheets/style.css" rel="stylesheet" />
-    </head>
+					<!-- talliver -->
+					<div>
+						<!-- name -->
+						<div>
+							<h2>Oliver Sjostrom</h2>
+						</div>
+						<img
+							src="/images/oliver-sjostrom.png"
+							alt="Oliver Sjostrom picture"
+							class="team-member-pic"
+						/>
+						<div class="team-member-text-div">
+							<p class="team-member-text-p">
+								text here about talliver
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<body>
-    <div id="navbar-placeholder"></div>
-        <!-- code from grid example -->
-        <div class="container">
-            
+		<!-- make sure to import these for navbar to work -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-            
-
-            <div class="page-header">
-                <br>
-                <h1>About the Team</h1>
-                <p class="lead">
-                    Here is a little bit about the team behind Heartrate Helper.
-                </p>
-            </div>
-            
-            
-            <br>
-            <h3>Hsinwei Lin</h3>
-            <p>
-                Hsinwei project role here
-            </p>
-            <div class="row">
-                <div class="col-md-4 transparent-grid">
-                    .col-md-4
-                    <img src="/images/hsinwei.jpg" alt="Hsinwei picture" />
-                </div>
-                <div class="col-md-8 transparent-grid">
-                    <br />
-                    <div class="bio_text">
-                        Hswinwei Bio here "Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum." "Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis
-                        aute irure dolor in reprehenderit in voluptate velit
-                        esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                        sint occaecat cupidatat non proident, sunt in culpa qui
-                        officia deserunt mollit anim id est laborum." "Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud
-                    </div>
-                </div>
-            </div>
-
-            <!-- for smalliver -->
-            <br>
-            <h3>Oliver Seymour</h3>
-            <div class="row">
-                <div class="col-md-4 transparent-grid">
-                    <img src="/images/hsinwei.jpg" alt="hsinwei pic" />
-                </div>
-                <div class="col-md-8 transparent-grid">
-                    .col-md-8
-                    <br />
-                    <div class="bio_text">
-                        Oliver Seymour Bio here "Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum." "Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis nostrud exercitation ullamco
-                    </div>
-                </div>
-            </div>
-
-            <!-- for talliver -->
-            <br>
-            <h3>Oliver Sjostrom</h3>
-            <div class="row">
-                <div class="col-md-4 transparent-grid">
-                    <img src="/images/oliver-sjostrom.png" alt="Oliver Sjostrom picture" />
-                </div>
-                <div class="col-md-8 transparent-grid">
-                    .col-md-8
-                    <br />
-                    <div class="bio_text">
-                        Oliver Sjostrom Bio here "Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris
-                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum." "Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut
-                        enim ad minim veniam, quis nostrud exercitation ullamco
-                        anim id est laborum." "Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /container -->
-
-        <!-- TODO: do we need this?? -->
-        <!-- Include Bootstrap CSS from a CDN -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-
-        <!-- Include Bootstrap JavaScript from a CDN -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script>
-            window.jQuery ||
-                document.write(
-                    '<script src="../../assets/js/vendor/jquery.min.js"><\/script>'
-                );
-        </script>
-        <script src="javascript/navbar.js"></script>
-        <script>
-            window.onload = function() {
-                loadNavbar();
-            };
-        </script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    </body>
+		<!-- load in the navbar on page run -->
+		<script src="javascript/navbar.js"></script>
+		<script>
+			window.onload = function () {
+				loadNavbar();
+			};
+		</script>
+	</body>
+</html>
