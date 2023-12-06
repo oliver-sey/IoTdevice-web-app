@@ -1,7 +1,7 @@
 /* **this a global stylesheet for the whole project, you just have to make sure to include it in each html file */
 
 body {
-  padding: 50px;
+  /* padding: 50px; */
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
@@ -34,4 +34,9 @@ img {
 /* for creating an account, and then also updating your account */
 .form-errors {
   color: red;
+}
+
+/* important for references.html and index.html */
+.one-section {
+	margin-bottom: 3%;
 }
