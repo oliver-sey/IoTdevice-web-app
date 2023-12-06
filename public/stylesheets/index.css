@@ -1,10 +1,46 @@
 /* CSS for one-section is in style.css */
 
+.the-team-container {
+	display: flex;
+	flex-direction: column;
+}
+
 .one-section-title {
 	margin-top: 2%;
 	margin-bottom: 1%;
 }
 
+.one-member-container {
+	display: flex;
+	flex-direction: row;
+}
+
 .team-member-pic {
 	max-width: 50%;
 }
+
+/* media queries */
+
+/* TODO: Add media query for 800px breakpoint */
+/* Use the .vacation-container img selector to change the image width to 50vw 
+so vacation images occupy half the viewport's width. */
+
+/* Use the .vacation-container selector to make the vacation descriptions appear 
+to the right of the vacation images instead of underneath. */
+
+/* Use the .vacation-container > div selector to add a 20px margin between 
+the vacation descriptions and images. */
+@media (min-width: 800px) {
+	.team-member-pic {
+	   width: 50vw;
+	}
+ 
+	.one-member-container {
+	   /* TODO: make the descriptions appear to the right */
+	   flex-direction: row;
+	}
+ 
+	.one-member-container > div {
+	   margin: 20px;
+	}
+ }
