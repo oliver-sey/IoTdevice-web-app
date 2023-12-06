@@ -4,7 +4,7 @@ var Device = require("../models/device");
 
 // Get all device by user
 router.get('/mydevices', (req, res) => {
-  console.log("mydevices request body", req)
+  //console.log("mydevices request body", req)
   if (req.query.email) {
     Device.find({email: req.query.email}).then(result => {
       if (result !== null && result.length !== 0) {

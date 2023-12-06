@@ -57,21 +57,22 @@ $(document).ready(()=>{
 
 function addClickHandlers() {
     console.log("in the addClickHandlers function")
-    setRequestBody()
-    $.ajax({
-        url: "/users/user", 
-        method: "POST",
-        data: JSON.stringify(requestBody),
-        contentType: "application/json",
-        dataType: "json"
-     })
-     .done(function(data) {
-        console.log("Success", data)
-        $('#useremail').text(data.email)
-     })
-     .fail(function(err) {
-        alert("Login Fail")
-     });
+    $('#userName').text(localStorage.getItem('userName'))
+    //setRequestBody()
+    // $.ajax({
+    //     url: "/users/user", 
+    //     method: "POST",
+    //     data: JSON.stringify(requestBody),
+    //     contentType: "application/json",
+    //     dataType: "json"
+    //  })
+    //  .done(function(data) {
+    //     console.log("Success", data)
+    //     $('#useremail').text(data.userName)
+    //  })
+    //  .fail(function(err) {
+    //     alert("Login Fail")
+    //  });
 
      $('#newDevice').click(function(param) {
         window.location.assign("registerDevice.html")

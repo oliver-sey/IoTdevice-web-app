@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+	
     console.log("hostname", window.location.hostname)
 
 	// setting the placeholders for the first name and last name, to be the
@@ -28,9 +29,8 @@ function addClickHandlers() {
     console.log("in the addClickHandlers function in updateAccount")
     
     // when you click 'Sign up' button on the login screen, call logIn()
-    $("#submitEditedProfile").click((event) => {
-        event.preventDefault(); // Prevent form submission
-
+    $("#update").click((event) => {
+        //event.preventDefault(); // Prevent form submission
 		let formErrors = document.getElementById("formErrors");
 		formErrors.innerHTML = "";
 		formErrors.style.display = "none";
@@ -91,12 +91,27 @@ function updateAccount() {
 	console.log("in updateAccount() in updateAccount.js, have to still implement this!!");
 
 	// trim whitespace off the front and end
-	let newFirstName = $("#newFirstName").value.trim();
-	let newLastName = $("#newLastName").value.trim();
-
+	let user_Name = $("#userName").val();
 	// **by this point we have checked that the password and the confirm password are the same
-	let newPassword = $("#newPassword").value;
+	let pass_word = $("#newPassword").val();
 
+	$.ajax({
+		url: "/users/update", 
+        method: "PATCH",
+        data: JSON.stringify({email: localStorage.getItem('email'), userName: user_Name, password: pass_word}),
+        contentType: "application/json",
+        dataType: "json"
+	})
+	.done((data) => {
+		console.log("update success", data)
+		localStorage.clear()
+		alert("account update success, please login again")
+		window.location.assign("signin.html")
+	})
+	.fail((err) => {
+		console.log("update fail", err)
+		alert("account update fail")
+	})
 
 	// TODO: update account here!!!
 }

@@ -1,4 +1,5 @@
 let requestBody = {
+	userName: "",
     email: "",
     password: ""
 }
@@ -88,6 +89,7 @@ function addClickHandlers() {
 function setRequestBody() {
     requestBody.email = $("#email").val()
     requestBody.password = $("#password").val()
+	requestBody.userName = $('#userName').val()
     console.log("requestBody", requestBody)
 }
 
