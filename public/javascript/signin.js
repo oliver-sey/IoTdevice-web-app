@@ -1,5 +1,5 @@
 
-let requestBody = {
+let requestBody = {// request body for sign in
     email: "",
     password: ""
 }
@@ -27,7 +27,7 @@ function addClickHandlers() {
 }
 
 
-function setRequestBody() {
+function setRequestBody() {// set user input as request body
     requestBody.email = $("#floatingInput").val()
     requestBody.password = $("#floatingPassword").val()
     console.log("requestBody", requestBody)
@@ -36,15 +36,14 @@ function setRequestBody() {
 function logIn() {
     console.log("In the logIn() function")
     setRequestBody()
-    $.ajax({
-        // hard coded for testing. CHANGE HERE LATER!!! DELETE: http://localhost:3000
+    $.ajax({// ajax call for user log in
         url: "/users/user", 
         method: "POST",
         data: JSON.stringify(requestBody),
         contentType: "application/json",
         dataType: "json"
      })
-     .done(function(data) {
+     .done(function(data) {// if success, set local storage of user datas
         console.log("response data", data)
         localStorage.setItem("userName", data.result.userName)
         localStorage.setItem("email", data.result.email)

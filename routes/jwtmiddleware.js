@@ -2,7 +2,7 @@
 const jwt = require('jwt-simple');
 const secret = "1z98AJf901JZAa"
 
-function verifyJWT(req, res, next) {
+function verifyJWT(req, res, next) {//check if JWT approve
   console.log("verifyJWT req", req.headers)
   const token = req.headers['x-access-token'] || req.headers['authorization'];
 
@@ -10,7 +10,7 @@ function verifyJWT(req, res, next) {
     return res.status(401).json({ message: 'No token provided.' });
   }
 
-  try {
+  try {// if token found, decode it and send it back to user
     console.log("token", token)
     const decoded = jwt.decode(token, secret);
     req.user = decoded;
