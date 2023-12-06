@@ -1,4 +1,8 @@
 $(document).ready(()=>{
+	if (!localStorage.getItem('jwt')) {//check if user logged in yet
+        alert('Please log in first...')
+        window.location.assign("signin.html")
+    }
 	
     console.log("hostname", window.location.hostname)
 
@@ -87,7 +91,7 @@ function addClickHandlers() {
     })
 }
 
-function updateAccount() {
+function updateAccount() {//get the new user input to update account info 
 	console.log("in updateAccount() in updateAccount.js, have to still implement this!!");
 
 	// trim whitespace off the front and end
@@ -95,7 +99,7 @@ function updateAccount() {
 	// **by this point we have checked that the password and the confirm password are the same
 	let pass_word = $("#newPassword").val();
 
-	$.ajax({
+	$.ajax({//ajax call to update user account
 		url: "/users/update", 
         method: "PATCH",
         data: JSON.stringify({email: localStorage.getItem('email'), userName: user_Name, password: pass_word}),

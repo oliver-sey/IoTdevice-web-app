@@ -4,8 +4,13 @@ let requestBody = {
 }
 
 $(document).ready(()=>{
+    if (!localStorage.getItem('jwt')) {//check if user logged in yet
+        alert('Please log in first...')
+        window.location.assign("signin.html")
+    }
+
     console.log("hostname", window.location.hostname)
-    $.ajax({
+    $.ajax({//ajax call to get all user devices
         url: `/device/mydevices?email=${localStorage.getItem('email')}`,
         method: "GET",
         contentType: "application/json",
@@ -15,17 +20,11 @@ $(document).ready(()=>{
     .done(function(res) {
         console.log("my devices", res, res.length)
         //ex https://api.thingspeak.com/channels/2349152/charts/1?api_key=MPQACWXEJVYHLC7K
-        for (let i = 0; i < res.length; i++) {
-            $('tr').after(`<tr id="${i + 1}"> <td>${i + 1}</td> <td>${res[i].deviceName}</td> <td>${res[i].register_Date}</td>  <td><button id="btn${i + 1}">delete</button></td></tr>`)
+        for (let i = 0; i < res.length; i++) {//display all user devices in a table
+            $(`#r${i}`).after(`<tr id="r${i + 1}"> <td>${i + 1}</td> <td>${res[i].deviceName}</td> <td>${res[i].register_Date}</td>  <td><button id="btn${i + 1}">delete</button></td></tr>`)
 
-            $(`#date${i+1}`).change(() => {
-                console.log($(`#date${i+1}`).val())
-            })
-            // $(`#button${i+1}`).click(() => {
-            //     window.location.assign(`https://api.thingspeak.com/channels/${res[i].channelID}/charts/1?api_key=${res[i].readAPI_Key}&title=YourHeartRateAt:${$(`#date${i+1}`).val()}&start=${$(`#date${i+1}`).val()}`)
-            // })
-            $(`#btn${i + 1}`).click(() => {
-                $.ajax({
+            $(`#btn${i + 1}`).click(() => {//event listener for ajax call to delete a device and reload the page after deleted
+                $.ajax({//
                     url: "/device/delete",
                     method: "DELETE",
                     contentType: "application/json",
@@ -57,7 +56,7 @@ $(document).ready(()=>{
 
 function addClickHandlers() {
     console.log("in the addClickHandlers function")
-    $('#userName').text(localStorage.getItem('userName'))
+    $('#userName').text(localStorage.getItem('userName'))//set user name as userName
     //setRequestBody()
     // $.ajax({
     //     url: "/users/user", 
@@ -74,13 +73,13 @@ function addClickHandlers() {
     //     alert("Login Fail")
     //  });
 
-     $('#newDevice').click(function(param) {
+     $('#newDevice').click(function(param) {//redirect to register device page
         window.location.assign("registerDevice.html")
      })
-     $('#logOut').click(logOut)
+     $('#logOut').click(logOut)//log out and redirect to log in page
 }
 
-function setRequestBody() {
+function setRequestBody() {//set request body
     requestBody.email = localStorage.getItem('email')
     requestBody.password = localStorage.getItem('password')
     console.log("LoggedIn requestBody", requestBody)
