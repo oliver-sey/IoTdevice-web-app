@@ -4,16 +4,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>References</title>
-        
-        <!-- favicon (little logo in the browser) -->
-        <link rel="icon" href="../images/heart-stethoscope.svg" />
+
+		<!-- favicon (little logo in the browser) -->
+		<link rel="icon" href="../images/heart-stethoscope.svg" />
 
 		<link
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 			rel="stylesheet"
 		/>
-        <!-- general CSS for this whole project -->
-        <link href="/stylesheets/style.css" rel="stylesheet" />
+		<!-- general CSS for this whole project -->
+		<link href="/stylesheets/style.css" rel="stylesheet" />
 		<!-- Custom styles for this template -->
 		<link href="/stylesheets/references.css" rel="stylesheet" />
 	</head>
@@ -21,71 +21,126 @@
 		<!-- add this placeholder in -->
 		<div id="navbar-placeholder"></div>
 
+		<!-- page stuff goes here -->
+		<!-- for all the page contents -->
+		<div style="margin-left: 3%; margin-right: 3%">
+			<!-- for the heading -->
+			<div class="one-section">
+				<!-- for the title text -->
+				<div style="margin-top: 2%; margin-bottom: 1%">
+					<h1>Some resources we used:</h1>
+				</div>
+				<!-- for some subheading text -->
+				<div>
+					<p class="subtitle-p">
+						For some parts of this project, we didn't want to
+						reinvent the wheel, when beautiful and responsive UI
+						components, or library with the features that we needed,
+						already exist. Here is a list of outside resources we
+						used.
+					</p>
 
-    <!-- page stuff goes here -->
-    <!-- for all the page contents -->
-    <div style="margin-left: 3%; margin-right: 3%">
-      <!-- for the heading -->
-      <div class="one-section">
-        <!-- for the title text -->
-        <div style="margin-top: 2%; margin-bottom: 1%">
-          <h1>Some resources we used:</h1>
-        </div>
-        <!-- for some subheading text -->
-        <div>
-          <p class="subtitle-p">
-            For some parts of this project, we didn't want to reinvent the
-            wheel, when beautiful and responsive UI components, or library with
-            the features that we needed, already exist. Here is a list of
-            outside resources we used.
-          </p>
-        </div>
-      </div>
+					<h4>
+						We appreciate all the creators of these libraries and
+						packages, for putting in hard work to create helpful
+						tools for others to use. Thanks!
+					</h4>
+				</div>
+			</div>
 
-      <!-- for bootstrap -->
-      <div class="one-section">
-        <!-- div for the title of this section -->
-        <div>
-          <h2>Bootstrap</h2>
-        </div>
-        <!-- div for some description -->
-        <div>
-          <p class="subtitle-p">
-            We used the Bootstrap library for some UI components. The navbar on
-            our site, the design of the sign-in and sign-up pages, and a few
-            other components come from Bootstrap.
-          </p>
-        </div>
-      </div>
+			<!-- for bootstrap -->
+			<div class="one-section">
+				<!-- div for the title of this section -->
+				<div>
+					<h2>Bootstrap</h2>
+				</div>
+				<!-- div for some description -->
+				<div>
+					<p class="subtitle-p">
+						We used the Bootstrap library for some UI components.
+						The navbar on our site, the nicely styled buttons, some
+						table formatting, the design of the sign-in and sign-up
+						pages, and a few other components come from Bootstrap.
+					</p>
+				</div>
+			</div>
 
-      <div class="one-section">
-        <!-- div for the title of this section -->
-        <div>
-          <h2>TODO: other library goes here</h2>
-        </div>
-        <!-- div for some description -->
-        <div>
-          <p class="subtitle-p">
-            TODO: other text goes here to describe this library.
-          </p>
-        </div>
-      </div>
-      <div class="one-section">
-        <!-- div for the title of this section -->
-        <div id="readme-text">
-          <h2>readme-text</h2>
-        </div>
-      </div>
-    </div>
+			<!-- for bcrypt -->
+			<div class="one-section">
+				<!-- div for the title of this section -->
+				<div>
+					<h2>Bcrypt</h2>
+				</div>
+				<!-- div for some description -->
+				<div>
+					<p class="subtitle-p">
+						We use Bcrypt to hash and salt user's passwords, so we
+						can securely store them in our database.
+					</p>
+				</div>
+			</div>
 
-    <!-- make sure to import these for navbar to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+			<div class="one-section">
+				<!-- div for the title of this section -->
+				<div>
+					<h2>jwt-simple</h2>
+				</div>
+				<!-- div for some description -->
+				<div>
+					<p class="subtitle-p">
+						Jwt-simple helps us with managing JWTs (JSON Web
+						Tokens), which we generate and store when a user logs
+						in.
+					</p>
+				</div>
+			</div>
 
-    <!-- load in the navbar on page run -->
-    <script src="javascript/navbar.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+			<div class="one-section">
+				<!-- div for the title of this section -->
+				<div>
+					<h2>Mongoose</h2>
+				</div>
+				<!-- div for some description -->
+				<div>
+					<p class="subtitle-p">
+						Mongoose helps us connect our JavaScript code, to the
+						MongoDB database that we are using in this project.
+					</p>
+				</div>
+			</div>
+
+			<div class="one-section">
+				<!-- div for the title of this section -->
+				<div>
+					<h2>Other NPM packages:</h2>
+				</div>
+				<!-- div for some description -->
+				<div>
+					<p class="subtitle-p">
+						Some other NPM packages that got installed in our
+						project, possibly because they are dependencies of other
+						packages, are:
+					</p>
+					<ul>
+						<li>cookie-parser</li>
+						<li>debug</li>
+						<li>express</li>
+						<li>morgan</li>
+						<li>pug</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- make sure to import these for navbar to work -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+		<!-- load in the navbar on page run -->
+		<script src="javascript/navbar.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
       fetch("../docs/backend/api.md") // The path to the raw Markdown file
         .then((response) => response.blob()) // Unwrap to a blob...
@@ -96,10 +151,10 @@
             marked.parse(markdown);
         });
     </script> -->
-    <script>
-      window.onload = function () {
-        loadNavbar();
-      };
-    </script>
-  </body>
+		<script>
+			window.onload = function () {
+				loadNavbar();
+			};
+		</script>
+	</body>
 </html>
