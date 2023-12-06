@@ -46,9 +46,9 @@ function logIn() {
      })
      .done(function(data) {
         console.log("response data", data)
-        localStorage.setItem("userName", data.userName)
-        localStorage.setItem("email", data.email)
-        localStorage.setItem("password", data.password)
+        localStorage.setItem("userName", data.result.userName)
+        localStorage.setItem("email", data.result.email)
+        localStorage.setItem("password", data.result.password)
         localStorage.setItem("jwt", data.jwt)
         window.location.assign("LoggedInPage.html")
         alert("Login Success")

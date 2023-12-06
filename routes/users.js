@@ -13,7 +13,7 @@ router.post('/user', (req, res) => {
     if (result !== null && result.length !== 0 && bcrypt.compareSync(req.body.password, result.password)) {//check if password matches the hashed password inside the database
         // add JWT token calculation
         const jwtString = jwt.encode({email:req.body.email}, secret);
-        res.status(200).send(result)
+        res.status(200).send({result: result, jwt: jwtString})
         console.log("get", result)
     }
     else{
