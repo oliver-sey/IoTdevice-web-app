@@ -6,13 +6,6 @@ $(document).ready(()=>{
 	
     console.log("hostname", window.location.hostname)
 
-	// setting the placeholders for the first name and last name, to be the
-	// user's first name and last name. 
-	// This makes it convenient for the user to make edits to their details, and we
-	// can just send all the values that are in the text inputs, whether they edited it or not,
-	// to the server to update
-	setPlaceholders();
-	
     // call the function that will add all the click handlers
     // we put this in a function because it didn't seem to add the handlers
     // if we did it outside a function
@@ -20,12 +13,6 @@ $(document).ready(()=>{
     addClickHandlers()
 })
 
-// setting the placeholder values for the first name and last name inputs, more explanation in document.ready
-function setPlaceholders() {
-	// TODO: get the user's first name and last name, and make that the placeholder text in the input where they
-	// put their new first name and last name
-	console.log("in setPlaceholders(), have to still implement this!!");
-}
 
 // **** put all your adding click handlers in here!!!
 // this gets called when the document is ready
@@ -43,8 +30,6 @@ function addClickHandlers() {
 		let confirmPassword = document.getElementById("confirmNewPassword");
 		let errors = [];
 
-        // TODO: get rid of this!!!!
-		console.log("Password: " + password.value);
 
 		// perform checks. CURRENTLY DOES NOT CHECK FOR FULL ENGLISH WORDS, MAY HAVE TO ADD THAT LATER DEPENDING
 		// *** users can't edit their email
@@ -92,8 +77,6 @@ function addClickHandlers() {
 }
 
 function updateAccount() {//get the new user input to update account info 
-	console.log("in updateAccount() in updateAccount.js, have to still implement this!!");
-
 	// trim whitespace off the front and end
 	let user_Name = $("#userName").val();
 	// **by this point we have checked that the password and the confirm password are the same
@@ -116,6 +99,4 @@ function updateAccount() {//get the new user input to update account info
 		console.log("update fail", err)
 		alert("account update fail")
 	})
-
-	// TODO: update account here!!!
 }
