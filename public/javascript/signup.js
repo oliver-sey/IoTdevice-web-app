@@ -26,15 +26,24 @@ function addClickHandlers() {
 		formErrors.innerHTML = "";
 		formErrors.style.display = "none";
 
+		let username = document.getElementById("userName");
 		let email = document.getElementById("email");
 		let password = document.getElementById("password");
 		let confirmPassword = document.getElementById("passwordConfirm");
 		let errors = [];
 
-		console.log("Email: " + email.value);
-        // TODO: get rid of this!!!!
-		console.log("Password: " + password.value);
+		// remove "error" from all the HTML elements, if there is an error 
+		// it will get added back
+		username.classList.remove("error");
+		email.classList.remove("error");
+		password.classList.remove("error");
+		confirmPassword.classList.remove("error");
 
+
+		if (username.value.trim() == "") {
+			errors.push("Missing username.");
+			username.classList.add("error");
+		}
 		// TODO: !!!! if you change anything with the password checks here, remember to change it in updatePassword!!!!
 		// perform checks. CURRENTLY DOES NOT CHECK FOR FULL ENGLISH WORDS, MAY HAVE TO ADD THAT LATER DEPENDING
 		if (
