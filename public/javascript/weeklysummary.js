@@ -16,7 +16,7 @@ $(document).ready(()=>{
         console.log("my devices", res, res.length)
         //ex https://api.thingspeak.com/channels/2349152/charts/1?api_key=MPQACWXEJVYHLC7K
         for (let i = 0; i < res.length; i++) {
-            $(`#div${i}`).after(`<div id="div${i+1}"><p>Device ${i+1}: ${res[i].deviceName}</p><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://api.thingspeak.com/channels/${res[i].channelID}/charts/1?api_key=${res[i].readAPI_Key}&title=Heart_Rate&yaxis=Heart_Rate(BPM)&days=7"></iframe> <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://api.thingspeak.com/channels/${res[i].channelID}/charts/2?api_key=${res[i].readAPI_Key}&title=Blood_Oxygen_Saturation&days=7&yaxis=Blood_Oxygen_Saturation(BOS)&results=1000"></iframe></div>`)
+            $(`#div${i}`).after(`<div id="div${i+1}"><p id="device"><b>Device ${i+1}: ${res[i].deviceName}</b></p><iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://api.thingspeak.com/channels/${res[i].channelID}/charts/1?api_key=${res[i].readAPI_Key}&title=Heart_Rate_VS_Time&yaxis=Heart_Rate(BPM)&min=65&yaxismin=0&results=50&xaxis=Time"></iframe> <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://api.thingspeak.com/channels/${res[i].channelID}/charts/2?api_key=${res[i].readAPI_Key}&title=Blood_Oxygen_Saturation_VS_Time&days=7&yaxis=Blood_Oxygen_Saturation(BOS)&results=1000&min=90&yaxismin=0&xaxis=Time"></iframe></div>`)
 
             //ajax for getting average heart rate and blood oxygen saturation
             $.ajax({
@@ -60,7 +60,7 @@ $(document).ready(()=>{
             })
             .done((res) => {
                 console.log("average", res)
-                $(`#div${i + 1}`).after(`<p><b>Average Heart_Rate: </b>${res.feeds[1].field1}(bpm) <br> <b>Average Blood Oxygen Saturation: </b>${res.feeds[0].field2}%</p>`)
+                $(`#div${i + 1}`).after(`<p><b>Average Heart_Rate: </b>${res.feeds[1].field1}(bpm) <br> <b>Average Blood_Oxygen_Saturation: </b>${res.feeds[0].field2}%</p>`)
             })
             .fail((err) => {
                 console.log("average fail", err)
