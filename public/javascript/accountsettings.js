@@ -43,9 +43,6 @@ function addClickHandlers() {
 		let confirmPassword = document.getElementById("confirmNewPassword");
 		let errors = [];
 
-        // TODO: get rid of this!!!!
-		console.log("Password: " + password.value);
-
 		// perform checks. CURRENTLY DOES NOT CHECK FOR FULL ENGLISH WORDS, MAY HAVE TO ADD THAT LATER DEPENDING
 		// *** users can't edit their email
 
