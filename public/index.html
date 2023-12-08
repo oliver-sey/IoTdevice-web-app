@@ -20,6 +20,8 @@
 		<link href="stylesheets/style.css" rel="stylesheet" />
 		<!-- Custom styles for this template -->
 		<link href="/stylesheets/index.css" rel="stylesheet" />
+		<!-- we use .subtitle-p from the references CSS page -->
+		<link href="/stylesheets/references.css" rel="stylesheet" />
 	</head>
 	<body>
 		<!-- add this placeholder in -->
@@ -36,9 +38,21 @@
 				</div>
 				<!-- for some subheading text -->
 				<div>
-					<p class="subtitle-p">
-						TODO: put text here talking about the project
-					</p>
+					<div class="one-member-container">
+											
+						<div class="team-member-text-div">
+							<p class="team-member-text-p">
+								The Heart-Rate Helper application is a low-cost IoT-enabled web app for monitoring heart rate and blood oxygen saturation level throughout the day. In this project, we used Particle IoT board (Argon) and Heart Rate Sensor (Module MAX30102 Pulse Detection Blood Oxygen) as our hardware devices. We used AWS EC2 instance as our cloud application server, Express.js and MongoDB (mongoose) for our backend services and server-side APIs, and HTML/CSS/Javascript/jQuery/Ajax for our frontend services and client-side APIs. Overall, it’s a Full-stack application that applies both web development and the Internet of Things! We hope you enjoy it!
+
+							</p>
+						</div>
+					</div>
+					<div><picture>
+						<source media="(min-width: 900px)" width="40%" srcset="/images/argon-board.jpg">
+						<source media="(min-width: 750px)" width="40%" srcset="/images/argon-board-narrow.jpg">
+						<source media="(min-width: 650px)" width="30%" srcset="/images/argon-board-narrow.jpg">
+						<img src="/images/argon-board-narrow.jpg" width="40%" alt="Particle Argon IoT board">
+					</picture></div>
 				</div>
 			</div>
 

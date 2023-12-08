@@ -3,13 +3,13 @@
 	justify-content: center;
 }
 
-.update-container {
+.whole-page-container {
 	margin: 2%;
 	width: 60%;
 }
 
 /* the div to update one thing i.e. either your password or your first name, or ... */
-.update-one-detail {
+.one-detail {
 	margin: 3%;
 }
 
@@ -33,7 +33,7 @@ label {
 }
 
 /* the button to submit */
-#submitEditedProfile {
+.submit-btn {
 	margin: 2%;
 }
 
@@ -41,7 +41,7 @@ label {
 /* at <= 750px viewport width, set the update container to be the whole screen width
 we want it to take up less width when the viewport is wider */
 @media (max-width: 750px) {
-	.update-container {
+	.whole-page-container {
 		width: 100%;
 	}
 }
