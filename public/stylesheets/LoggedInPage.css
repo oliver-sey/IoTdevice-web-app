@@ -5,24 +5,26 @@
 }
 
 .all-page-contents {
-	width: 100vw;
+	/* width: 98vw; */
+	margin-left: 1%;
+	margin-right: 1%;
 }
 
-table,
+/* table,
 td,
 th {
 	border: solid 1px black;
-}
+} */
 
 .table {
 	margin: 20px 0px;
 }
 
-p {
+/* p {
 	color: red;
 	width: 420px;
 	height: 130px;
 	margin: 20px 0px;
 	padding: 5px;
 	border: solid 1px black;
-}
+} */
