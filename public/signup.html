@@ -3,62 +3,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character encoding, viewport settings, and authorship -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="Oliver Sjostrom and team" />
     <title>Signup Page</title>
 
-    <!-- favicon (little logo in the browser) -->
+    <!-- Link to the favicon for the browser tab icon -->
     <link rel="icon" href="../images/heart-stethoscope.svg" />
 
-    
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap CSS for styling and responsive layout -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- general CSS for this whole project -->
+    <!-- Link to the general CSS file for the entire project -->
     <link href="/stylesheets/style.css" rel="stylesheet" />
 
-    <!-- Custom styles for this template -->
+    <!-- Custom CSS specific to the signup page -->
     <link href="stylesheets/signup.css" rel="stylesheet" />
 
-    <!-- link for js and jquery for ajax -->
+    <!-- Import jQuery library for JavaScript functionality -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- import the JS file -->
+    <!-- Import the JavaScript file for the signup page -->
     <script src="javascript/signup.js"></script>
   </head>
   <body class="text-center">
+    <!-- Main container for the signup form -->
     <div class="container-fluid h-100">
+      <!-- Responsive row to center the signup form -->
       <div class="row h-100 justify-content-center align-items-center">
+        <!-- Column settings for various screen sizes -->
         <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+          <!-- Main section for the signup form -->
           <main class="form-signup" id="form-signup">
+            <!-- Signup form -->
             <form>
+              <!-- Application name and prompt for account creation -->
               <h1 class="h3 mb-3 fw-normal pt-5"><strong>Heartrate Helper</strong></h1>
               <h1 class="h4 mb-3 fw-normal">Create Account</h1>
   
+              <!-- User name input field -->
               <div class="form-group">
                 <label for="userName">User Name</label>
                 <input type="text" class="form-control" id="userName" placeholder="username1" />
               </div>
 
+              <!-- Email input field -->
               <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="text" class="form-control" id="email" placeholder="name@example.com" />
               </div>
   
+              <!-- Password input field -->
               <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" id="password" placeholder="Password" />
               </div>
   
+              <!-- Confirm password input field -->
               <div class="form-group mb-4">
                 <label for="passwordConfirm">Confirm Password</label>
                 <input type="password" class="form-control" id="passwordConfirm" placeholder="Password" />
               </div>
   
-              <div id="formErrors"></div> <!-- Form errors will be displayed here -->
+              <!-- Div to display form errors -->
+              <div id="formErrors"></div>
   
+              <!-- Signup button -->
               <button class="w-100 btn btn-lg btn-primary" type="button" id="submit">Sign up</button>
+              <!-- Link to the sign-in page for existing users -->
               <div style="margin: 3%;">
                 <p>Already have an account? <a href="./signin.html">Sign in</a></p>
               </div>

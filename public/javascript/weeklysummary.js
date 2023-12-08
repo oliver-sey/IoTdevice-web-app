@@ -31,6 +31,7 @@ $(document).ready(()=>{
                 let minHR = 65
                 let maxBOS = 0
                 let minBOS = 100
+                // computes the averages we need from the imported data
                 for (let data of res.feeds) {
                     if(data.field1 > maxHR && data.field1 !== null)
                         maxHR = data.field1

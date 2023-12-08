@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character set, viewport settings, description, and author -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="Oliver Sjostrom and team" />
     <title>Signin Page</title>
 
-    <!-- favicon (little logo in the browser) -->
+    <!-- Link to the favicon for the browser tab icon -->
     <link rel="icon" href="../images/heart-stethoscope.svg" />
 
+    <!-- jQuery library inclusion -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JavaScript file specific to the sign-in functionality -->
     <script src="javascript/signin.js"></script>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap CSS for styling and layout -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- general CSS for this whole project -->
+    <!-- General CSS file for the entire project -->
     <link href="/stylesheets/style.css" rel="stylesheet" />
 
-    <!-- Custom styles for this template -->
+    <!-- Custom CSS specific to the sign-in page -->
     <link href="/stylesheets/signin.css" rel="stylesheet" />
   </head>
   <body class="text-center">
+    <!-- Main container to hold the sign-in form -->
     <div class="container-fluid h-100">
+      <!-- Responsive row to center the sign-in form -->
       <div class="row h-100 justify-content-center align-items-center">
+        <!-- Column settings for various screen sizes -->
         <div class="col-12 col-md-8 col-lg-6 col-xl-4">
+          <!-- Main section for the sign-in form -->
           <main class="form-signup">
+            <!-- Sign-in form -->
             <form>
+              <!-- Application name and sign-in prompt -->
               <h1 class="h3 mb-3 fw-normal pt-5"><strong>Heartrate Helper</strong></h1>
               <h1 class="h4 mb-3 fw-normal">Please sign in</h1>
   
+              <!-- Email input field -->
               <div class="form-group">
                 <label for="floatingInput">Email address</label>
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
               </div>
+              <!-- Password input field -->
               <div class="mb-0 pb-0 form-group">
                 <label for="floatingPassword">Password</label>
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
               </div>
-              <!-- <div class="mt-0 h6"> -->
+              <!-- Link to sign-up page for users without an account -->
               <div class="h6" style="margin-top: 2%; margin-bottom: 1;">
                 <a href="signup.html" class="text-primary">No account? Signup</a>
               </div>
 
+              <!-- Remember me checkbox -->
               <div class="checkbox mb-3">
                 <label>
                   <input type="checkbox" value="remember-me"> Remember me
                 </label>
               </div>
 
-              
+              <!-- Sign-in button -->
               <button class="w-100 btn btn-lg btn-primary" type="submit" id="signin">Sign in</button>
+              <!-- Footer with copyright year -->
               <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
             </form>
           </main>
@@ -59,5 +72,4 @@
       </div>
     </div>
   </body>
-
 </html>

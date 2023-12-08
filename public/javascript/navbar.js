@@ -9,6 +9,7 @@
 //<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 function loadNavbar() {
+    //the code below adds the navbar to our target html page
     document.getElementById('navbar-placeholder').innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         
@@ -71,6 +72,7 @@ function loadNavbar() {
         });
 }
 
+//this is a function that the navbar can call that supports logging out
 function logOut() {
     localStorage.clear();
     alert("You have successfully logged out!");
