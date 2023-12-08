@@ -1,52 +1,89 @@
+<!-- ***a new index page, without the bootstrap grid template -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register a Device</title>
-    
-    <!-- favicon (little logo in the browser) -->
-    <link rel="icon" href="../images/heart-stethoscope.svg" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>About Us</title>
+		
+		<!-- favicon (little logo in the browser) -->
+		<link rel="icon" href="../images/heart-stethoscope.svg" />
 
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="javascript/registerDevice.js"></script>
+		<link
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
 
-    
-    <!-- Our CSS for all pages -->
+		<!-- Our CSS for all pages -->
+		<!-- TODO: *****commented out for now bc it messes with the navbar -->
 		<link href="stylesheets/style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <h1>Register a new Device with us!!!</h1>
-    <div>
-      <label for="deviceName">Device Name:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="deviceName"
-        placeholder="EX: YourName_Argon"
-      />
-    </div>
-    <div>
-      <label for="channelID">Channel ID:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="channelID"
-        placeholder="EX: 1234567"
-      />
-    </div>
-    <div>
-      <label for="readAPI_Key">Read API key (not write API key):</label>
-      <input
-        type="text"
-        class="form-control"
-        id="readAPI_Key"
-        placeholder="EX: MPQACWXEJVYHLC7K"
-      />
-    </div>
-    <div>
-      <button id="register" type="button">Register</button>
-    </div>
-  </body>
+		<!-- Our CSS for account settings, also gets used for this page -->
+		<link href="stylesheets/accountsettings.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- add this placeholder in -->
+		<div id="navbar-placeholder"></div>
+
+		<!-- page stuff goes here -->
+		<div class="centered">
+			<div class="whole-page-container">
+				<h1>Register a new Device with us!!!</h1>
+				<div class="label-and-input-box">
+					<label for="deviceName">Device Name:</label>
+					<input
+						type="text"
+						class="form-control"
+						id="deviceName"
+						placeholder="EX: YourName_Argon"
+					/>
+				</div>
+				<div class="label-and-input-box">
+					<label for="channelID">Channel ID:</label>
+					<input
+						type="text"
+						class="form-control"
+						id="channelID"
+						placeholder="EX: 1234567"
+					/>
+				</div>
+				<div class="label-and-input-box">
+					<label for="readAPI_Key"
+						>Read API key (not write API key):</label
+					>
+					<input
+						type="text"
+						class="form-control"
+						id="readAPI_Key"
+						placeholder="EX: MPQACWXEJVYHLC7K"
+					/>
+				</div>
+				<div class="submit-btn-div">
+					<!-- <button id="register" type="button">Register</button> -->
+					<button
+						class="btn btn-large btn-primary"
+						type="button"
+						id="register"
+					>
+						Register
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- make sure to import these for navbar to work -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+		<!-- load in the navbar on page run -->
+		<script src="javascript/navbar.js"></script>
+		<script>
+			window.onload = function () {
+				loadNavbar();
+			};
+		</script>
+	</body>
 </html>
+
+

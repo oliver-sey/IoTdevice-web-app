@@ -6,6 +6,7 @@
     <title>Welcome</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="javascript/LoggedInPage.js"></script>
+    <script src="javascript/LoggedInPage.js"></script>
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -28,8 +29,14 @@
     <div class="all-page-contents">
       <div class="welcome-msg-div">
         <h1>Hello, Welcome to Heartrate Helper!</h1>
-	  </div>
-	  <h3>Hi <span id="userName"></span></h3>
+      </div>
+      <h3>Hi <span id="userName"></span></h3>
+      <p style="color: red;">
+        Note: If your device doesn't have any data on Particle/Webhook or data
+        from the past week/selected time, it will display an empty chart, so
+        please make sure your device already has data in the cloud before you
+        view the charts! Thank you so much!!
+      </p>
       <h3 id="deviceStart">Your Devices:</h3>
       <table class="table" style="width: 100%">
         <tr id="r0">
@@ -44,12 +51,6 @@
         Register a New Device
       </button>
 
-      <p id="p1">
-        Note: If your device doesn't have any data on Particle/Webhook or data
-        from the past week/selected time, it will display an empty chart, so
-        please make sure your device has data already in the cloud before you
-        view the charts! Thank you so much!!!
-      </p>
       <!--       <button id="logOut" type="button">Log out</button> -->
       <button class="btn btn-med btn-danger" type="button" id="logOut">
         Log Out
