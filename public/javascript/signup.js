@@ -100,7 +100,7 @@ function addClickHandlers() {
 		} else {
             signUp();
 		}
-    })
+    }})
 }
 
 // Function to populate the request body with user inputs
