@@ -5,9 +5,9 @@
 Team member: Hsinwei Lin, Oliver Seymour, Oliver Sjostrom
 
 
-#### Links to our pitch: [https://youtu.be/VAtsBfAW0bc](https://youtu.be/VAtsBfAW0bc)
+#### Link to our pitch: [https://youtu.be/VAtsBfAW0bc](https://youtu.be/VAtsBfAW0bc)
 
-#### Links to our video demo: [https://youtu.be/fE-9HMVGN8g](https://youtu.be/fE-9HMVGN8g)
+#### Link to our video demo: [https://youtu.be/fE-9HMVGN8g](https://youtu.be/fE-9HMVGN8g)
 
 ## Our AWS Cloud Server
 1. go to
