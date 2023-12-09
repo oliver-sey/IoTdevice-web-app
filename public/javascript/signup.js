@@ -51,8 +51,7 @@ function addClickHandlers() {
 			errors.push("Missing username.");
 			username.classList.add("error");
 		}
-		// TODO: !!!! if you change anything with the password checks here, remember to change it in updatePassword!!!!
-		// perform checks. CURRENTLY DOES NOT CHECK FOR FULL ENGLISH WORDS, MAY HAVE TO ADD THAT LATER DEPENDING
+
 		if (
 			!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/.test(email.value)
 		) {
