@@ -27,7 +27,7 @@ $(document).ready(() => {
 
         // Loop through the devices and display them in a table
         for (let i = 0; i < res.length; i++) {
-            $(`#r${i}`).after(`<tr id="r${i + 1}"> <td>${i + 1}</td> <td>${res[i].deviceName}</td> <td>${res[i].register_Date}</td>  <td><button id="btn${i + 1}">delete</button></td></tr>`)
+            $(`#r${i}`).after(`<tr id="r${i + 1}"> <td>${i + 1}</td> <td>${res[i].deviceName}</td> <td>${res[i].register_Date}</td>  <td><button class="btn btn-med btn-primary" id="btn${i + 1}">delete</button></td></tr>`)
 
             // Event listener for delete button
             $(`#btn${i + 1}`).click(() => {
