@@ -26,6 +26,7 @@ function addClickHandlers() {
 		formErrors.innerHTML = "";
 		formErrors.style.display = "none";
 
+		let username = document.getElementById("userName");
 		let email = document.getElementById("email");
 		let password = document.getElementById("password");
 		let confirmPassword = document.getElementById("passwordConfirm");
@@ -34,6 +35,19 @@ function addClickHandlers() {
 		console.log("Email: " + email.value);
 		console.log("Password: " + password.value);
 
+
+		// remove "error" from all the HTML elements, if there is an error 
+		// it will get added back
+		username.classList.remove("error");
+		email.classList.remove("error");
+		password.classList.remove("error");
+		confirmPassword.classList.remove("error");
+
+
+		if (username.value.trim() == "") {
+			errors.push("Missing username.");
+			username.classList.add("error");
+		}
 		if (
 			!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/.test(email.value)
 		) {
