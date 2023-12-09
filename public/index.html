@@ -164,6 +164,10 @@
 		<script>
 			window.onload = function () {
 				loadNavbar();
+				if (!localStorage.getItem('jwt')) {//check if user logged in yet
+					alert('Please log in first...')
+					window.location.assign("signin.html")
+    			}
 			};
 		</script>
 	</body>
